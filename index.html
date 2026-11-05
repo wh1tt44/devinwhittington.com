@@ -68,3 +68,102 @@
       <h1 class="font-cinematic text-4xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-tight">
         STORIES TOLD WITH <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-sky-400">CINEMATIC INTENSITY</span>
       </h1>
+      <div class="flex justify-center gap-6 font-cinematic text-[10px]">
+        <a href="#work" class="px-8 py-4 border border-white/20 text-white hover:bg-white hover:text-black transition tracking-widest">
+          VIEW PORTFOLIO
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-cinematic text-[9px] text-slate-500 tracking-widest">
+      <span>SCROLL</span>
+      <div class="w-[1px] h-8 bg-gradient-to-b from-sky-400 to-transparent animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- Selected Masterpieces Grid -->
+  <section id="work" class="py-32 px-6 md:px-16 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-white/10 pb-6">
+      <div>
+        <p class="font-cinematic text-[10px] text-sky-400 tracking-[0.3em] mb-2">CURATED ARCHIVE</p>
+        <h2 class="font-cinematic text-3xl md:text-5xl font-bold text-white tracking-wider">FEATURED WORKS</h2>
+      </div>
+      <p class="font-cinematic text-[10px] text-slate-400 tracking-widest mt-4 md:mt-0">10 SELECTED SHOTS</p>
+    </div>
+
+    <!-- Dynamic 10 Photo Layout linking 1.jpg through 10.jpg -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <script>
+        const titles = [
+          "Bridal Portrait", "The Full Party", "Bridesmaids", "Black & White Celebration", 
+          "Floral Array", "The Dip", "Groomsmen", "Bridal Group", "Ceremony Arch", "Memorial Display"
+        ];
+        
+        for(let i=1; i<=10; i++){
+          document.write(`
+            <div class="group relative lewy-glass rounded-xl overflow-hidden cursor-pointer ${i === 1 || i === 6 ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[4/3]'}">
+              <img src="${i}.jpg" class="w-full h-full object-cover opacity-80 image-zoom" alt="${titles[i-1]}" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                <div>
+                  <p class="font-cinematic text-[9px] text-sky-400 tracking-widest mb-1">FRAME // 0${i < 10 ? '0'+i : i}</p>
+                  <h3 class="font-cinematic text-lg font-bold text-white tracking-wide">${titles[i-1]}</h3>
+                </div>
+                <span class="font-cinematic text-[10px] text-slate-400 group-hover:text-sky-400 transition">EXPLORE &rarr;</span>
+              </div>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </section>
+
+  <!-- Studio & Director Section -->
+  <section id="about" class="py-32 px-6 md:px-16 max-w-7xl mx-auto border-t border-white/5">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="lewy-glass p-10 md:p-12 rounded-2xl relative">
+        <p class="font-cinematic text-[10px] text-sky-400 tracking-[0.3em] mb-3">THE DIRECTOR</p>
+        <h3 class="font-cinematic text-3xl font-bold text-white mb-6">DEVIN WHITTINGTION</h3>
+        <p class="text-slate-400 text-sm leading-relaxed font-light mb-6">
+          Devo Visuals delivers high-energy, cinematic wedding documentation across the Quad Cities. Every frame is engineered with premium color grading, raw emotion, and high-end visual polish.
+        </p>
+        <div class="grid grid-cols-2 gap-4 font-cinematic text-[10px] text-slate-400 pt-6 border-t border-white/10">
+          <div><span class="text-sky-400 block mb-1">GEAR</span> Full-Frame Cinema Rigs</div>
+          <div><span class="text-sky-400 block mb-1">LOCATION</span> Quad Cities, IL & IA</div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div id="contact" class="lewy-glass p-10 md:p-12 rounded-2xl border-sky-500/20">
+        <p class="font-cinematic text-[10px] text-sky-400 tracking-[0.3em] mb-2">COMMUNICATION LINK</p>
+        <h3 class="font-cinematic text-2xl font-bold text-white mb-8">BOOK YOUR DATE</h3>
+        <form action="https://formspree.io/f/xbjnqpyw" method="POST" class="space-y-6 font-cinematic text-[10px]">
+          <div>
+            <label class="block text-slate-400 mb-2 tracking-widest">NAME *</label>
+            <input type="text" name="name" required class="w-full bg-black/60 border border-white/10 rounded px-4 py-3 text-white focus:border-sky-400 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-2 tracking-widest">EMAIL *</label>
+            <input type="email" name="email" required class="w-full bg-black/60 border border-white/10 rounded px-4 py-3 text-white focus:border-sky-400 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-2 tracking-widest">EVENT DATE *</label>
+            <input type="date" name="date" required class="w-full bg-black/60 border border-white/10 rounded px-4 py-3 text-white focus:border-sky-400 focus:outline-none">
+          </div>
+          <button type="submit" class="w-full py-4 bg-white text-black font-bold hover:bg-sky-400 transition tracking-[0.2em] text-xs">
+            SEND INQUIRY
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12 text-center font-cinematic text-[10px] text-slate-500 tracking-widest">
+    <p>&copy; 2026 DEVO VISUALS. ALL RIGHTS RESERVED.</p>
+  </footer>
+
+</body>
+</html>
