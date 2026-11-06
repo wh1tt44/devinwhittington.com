@@ -1,281 +1,182 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DEVO VISUALS | CINEMATIC WEDDING MEDIA</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devo Visuals</title>
   <style>
-    :root {
-      --bg: #0d0a0b;
-      --accent-gold: #d4af37;
-      --accent-rose: #e8c5c8;
-    }
-    body {
-      background-color: var(--bg);
-      color: #f7f4f0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-    }
-    .font-serif-cormorant { 
-      font-family: 'Cormorant Garamond', serif; 
-    }
-    
-    /* Romantic Ambient Glass */
-    .wedding-glass {
-      background: rgba(22, 17, 19, 0.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(212, 175, 55, 0.15);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .wedding-glass:hover {
-      border-color: rgba(212, 175, 55, 0.4);
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.12);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .image-zoom {
-      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    body, html {
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #ffffff;
+      background-color: #0d0d0d;
+      overflow-x: hidden;
     }
-    .group:hover .image-zoom {
-      transform: scale(1.05);
+
+    /* Background image set to 4.jpg with overlay */
+    .hero-container {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                  url("4.jpg") repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Header Navigation */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      z-index: 10;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* Hero Text & CTA */
+    .hero-content {
+      text-align: center;
+      margin: auto 0;
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-outline {
+      border: 2px solid #ffffff;
+      background: transparent;
+      color: #ffffff;
+      padding: 0.65rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .btn-accent {
+      background-color: #2b7fff;
+      color: #ffffff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Decorative Strip at Bottom */
+    .film-strip {
+      width: 100%;
+      height: 16px;
+      background: repeating-linear-gradient(
+        90deg,
+        #ffffff,
+        #ffffff 12px,
+        #000000 12px,
+        #000000 24px
+      );
     }
   </style>
 </head>
-<body class="selection:bg-amber-200 selection:text-black">
+<body>
 
-  <!-- Header / Navigation -->
-  <header class="fixed top-0 left-0 w-full z-50 wedding-glass px-8 py-5 flex justify-between items-center border-b border-amber-500/10">
-    <a href="#" class="font-serif-cormorant text-2xl font-light tracking-[0.25em] text-amber-100">
-      DEVO<span class="text-amber-400">.</span>VISUALS
-    </a>
-    <nav class="hidden md:flex space-x-12 text-[11px] tracking-[0.25em] text-amber-100/70 font-light">
-      <a href="#work" class="hover:text-amber-200 transition">LOVE STORIES</a>
-      <a href="#about" class="hover:text-amber-200 transition">THE CINEMATOGRAPHER</a>
-      <a href="#contact" class="hover:text-amber-200 transition">INQUIRE</a>
-    </nav>
-    <a href="#contact" class="text-[10px] tracking-[0.2em] px-6 py-3 border border-amber-300/40 text-amber-100 hover:bg-amber-100 hover:text-black transition uppercase">
-      Check Date
-    </a>
-  </header>
+  <div class="hero-container">
+    <header>
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#services">Services</a>
+      </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center px-6 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="1.jpg" class="w-full h-full object-cover filter brightness-50 contrast-110 scale-105" alt="Cinematic Wedding Moment" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80'">
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a0b] via-transparent to-[#0d0a0b]/70"></div>
-    </div>
-
-    <div class="relative z-10 text-center max-w-5xl mx-auto pt-20">
-      <p class="font-serif-cormorant italic text-lg md:text-xl text-amber-200 tracking-widest mb-4">Quad Cities Wedding Films & Photography</p>
-      <h1 class="font-serif-cormorant text-5xl md:text-8xl font-light tracking-wide text-white mb-8 leading-tight">
-        CAPTURING ETERNAL <br/><span class="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-rose-100 to-amber-300">ROMANCE & ELEGANCE</span>
-      </h1>
-      <div class="flex justify-center gap-6 text-[10px]">
-        <a href="#work" class="px-8 py-4 border border-amber-200/30 text-amber-100 hover:bg-amber-100 hover:text-black transition tracking-[0.25em] uppercase">
-          Explore Gallery
-        </a>
+    <div class="hero-content">
+      <h1 class="hero-title">CINEMATIC VIDEOS</h1>
+      <h2 class="hero-subtitle">WE DO IT RAW</h2>
+      <div class="btn-group">
+        <a href="#book" class="btn-outline">BOOK NOW</a>
+        <button class="btn-accent">Page</button>
       </div>
     </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[9px] text-amber-200/50 tracking-widest uppercase">
-      <span>SCROLL</span>
-      <div class="w-[1px] h-8 bg-gradient-to-b from-amber-300 to-transparent animate-pulse"></div>
-    </div>
-  </section>
+    <div class="film-strip"></div>
+  </div>
 
-  <!-- Gallery Grid -->
-  <section id="work" class="py-32 px-6 md:px-16 max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-amber-500/10 pb-6">
-      <div>
-        <p class="font-serif-cormorant italic text-lg text-amber-300 mb-1">Curated Portfolio</p>
-        <h2 class="font-serif-cormorant text-4xl md:text-6xl font-light text-white tracking-wide">FEATURED MOMENTS</h2>
-      </div>
-      <p class="text-[10px] text-amber-200/60 tracking-[0.25em] uppercase mt-4 md:mt-0">10 SELECTED HIGHLIGHTS</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Item 1 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer md:col-span-2 aspect-[16/9]">
-        <img src="1.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Bridal Portrait" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 01</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Bridal Elegance</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="2.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="The Full Party" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 02</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Wedding Party Celebration</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="3.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Bridesmaids" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 03</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Bridesmaids Prep</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="4.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Monochrome Romance" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 04</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Monochrome Romance</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="5.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Floral Details" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 05</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Floral & Styling</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 6 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer md:col-span-2 aspect-[16/9]">
-        <img src="6.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="The Dip First Dance" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 06</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">First Dance Magic</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 7 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="7.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Groomsmen" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 07</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Groomsmen Portrait</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 8 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="8.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Bridal Party" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 08</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Sunset Group Shot</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 9 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="9.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Ceremony Arch" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 09</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Ceremony Space</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-
-      <!-- Item 10 -->
-      <div class="group relative wedding-glass rounded-sm overflow-hidden cursor-pointer aspect-[4/3]">
-        <img src="10.jpg" class="w-full h-full object-cover opacity-85 image-zoom" alt="Memorial Display" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-        <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-          <div>
-            <p class="text-[9px] text-amber-300 tracking-[0.25em] uppercase mb-1">SCENE // 10</p>
-            <h3 class="font-serif-cormorant text-2xl font-light text-white tracking-wide">Sentimental Keepsakes</h3>
-          </div>
-          <span class="text-[10px] text-amber-200/70 group-hover:text-amber-300 transition tracking-widest uppercase">VIEW FILM &rarr;</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About & Inquiry Section -->
-  <section id="about" class="py-32 px-6 md:px-16 max-w-7xl mx-auto border-t border-amber-500/10">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div class="wedding-glass p-10 md:p-12 rounded-sm relative">
-        <p class="font-serif-cormorant italic text-lg text-amber-300 mb-2">The Cinematographer</p>
-        <h3 class="font-serif-cormorant text-4xl font-light text-white mb-6">DEVIN WHITTINGTON</h3>
-        <p class="text-amber-100/70 text-sm leading-relaxed font-light mb-6">
-          Devo Visuals craft emotional, luxury wedding films across the Quad Cities and beyond. Every couple’s story is captured with delicate lighting, true-to-life tone grading, and timeless cinematic art.
-        </p>
-        <div class="grid grid-cols-2 gap-6 text-[10px] tracking-widest text-amber-200/60 uppercase pt-6 border-t border-amber-500/15">
-          <div><span class="text-amber-300 block mb-1">STYLE</span> Timeless & Romantic</div>
-          <div><span class="text-amber-300 block mb-1">REGION</span> Quad Cities, IL & IA</div>
-        </div>
-      </div>
-
-      <!-- Booking Form -->
-      <div id="contact" class="wedding-glass p-10 md:p-12 rounded-sm border-amber-500/20">
-        <p class="font-serif-cormorant italic text-lg text-amber-300 mb-1">Reserve Your Date</p>
-        <h3 class="font-serif-cormorant text-3xl font-light text-white mb-8">WEDDING INQUIRY</h3>
-        <form action="https://formspree.io/f/xbjnqpyw" method="POST" class="space-y-6 text-[10px] tracking-widest">
-          <div>
-            <label for="client-name" class="block text-amber-200/70 mb-2 uppercase">NAMES *</label>
-            <input type="text" id="client-name" name="name" required class="w-full bg-black/40 border border-amber-500/20 rounded-none px-4 py-3 text-white focus:border-amber-300 focus:outline-none">
-          </div>
-          <div>
-            <label for="client-email" class="block text-amber-200/70 mb-2 uppercase">EMAIL *</label>
-            <input type="email" id="client-email" name="email" required class="w-full bg-black/40 border border-amber-500/20 rounded-none px-4 py-3 text-white focus:border-amber-300 focus:outline-none">
-          </div>
-          <div>
-            <label for="event-date" class="block text-amber-200/70 mb-2 uppercase">WEDDING DATE *</label>
-            <input type="date" id="event-date" name="date" required class="w-full bg-black/40 border border-amber-500/20 rounded-none px-4 py-3 text-white focus:border-amber-300 focus:outline-none">
-          </div>
-          <button type="submit" class="w-full py-4 bg-amber-100 text-black font-medium hover:bg-amber-300 transition tracking-[0.25em] text-xs uppercase">
-            SEND INQUIRY
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-amber-500/10 py-12 text-center text-[10px] text-amber-200/40 tracking-[0.25em] uppercase">
-    <p>&copy; 2026 DEVO VISUALS. ALL RIGHTS RESERVED.</p>
-  </footer>
-
+</body>
+</html>
 </body>
 </html>
