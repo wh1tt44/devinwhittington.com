@@ -1,4 +1,4 @@
-/* CSS Reset & Variables */
+/* CSS Reset & Fixes */
 * {
     margin: 0;
     padding: 0;
@@ -129,7 +129,7 @@ body {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Hero Section with 4.jpg as Main Background */
+/* Hero Section Updates */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -154,19 +154,25 @@ body {
     display: block;
 }
 
+/* Clear, high-contrast main heading */
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.8rem, 6.5vw, 4.5rem);
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: -0.03em;
     text-transform: uppercase;
     line-height: 1.1;
+    color: var(--text-main);
 }
 
-.hero p {
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
+/* Bigger "WE DO IT RAW" tagline with spacing to push down the button slightly */
+.hero h3 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
+    text-transform: uppercase;
 }
 
 .hero-buttons {
@@ -364,176 +370,3 @@ body {
 
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.form-group label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.form-group input, .form-group textarea {
-    background-color: var(--bg-dark);
-    border: 1px solid var(--border);
-    padding: 0.9rem;
-    border-radius: 4px;
-    color: var(--text-main);
-    font-family: inherit;
-    font-size: 16px;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--text-main);
-}
-
-.btn-submit {
-    background-color: var(--text-main);
-    color: var(--bg-dark);
-    width: 100%;
-    padding: 1rem;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.btn-submit:hover {
-    background-color: var(--accent-hover);
-}
-
-/* Footer Bottom Layout */
-.footer-bottom-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2.5rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border);
-}
-
-.footer-col h3 {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    letter-spacing: 0.05em;
-}
-
-.footer-col p, .footer-col ul {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 0.6rem;
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.4rem;
-}
-
-.footer-col ul li a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-col ul li a:hover {
-    color: var(--text-main);
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-}
-
-.newsletter-form input {
-    background-color: var(--bg-dark);
-    border: 1px solid var(--border);
-    padding: 0.7rem;
-    border-radius: 4px;
-    color: var(--text-main);
-    font-size: 16px;
-}
-
-.checkbox-label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.btn-sub {
-    background: transparent;
-    border: 1px solid var(--text-main);
-    color: var(--text-main);
-    padding: 0.6rem;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-sub:hover {
-    background-color: var(--text-main);
-    color: var(--bg-dark);
-}
-
-.copyright {
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: 100vh;
-        background-color: var(--bg-card);
-        border-left: 1px solid var(--border);
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        padding: 2rem;
-        transition: right 0.4s ease;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.1rem;
-    }
-
-    .about-grid, .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-}
