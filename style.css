@@ -213,40 +213,23 @@ body {
     border-color: var(--text-main);
 }
 
-/* About Section */
-.about-section {
-    padding: 5rem 0;
-    background-color: var(--bg-dark);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.about-img-wrapper img {
+/* About Section Photo Styling (Black & White + Deep Black Background) */
+.about-photo {
     width: 100%;
     height: 100%;
     max-height: 450px;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--border);
-    filter: grayscale(100%);
+    
+    /* Converts image to black and white, boosts contrast, and deepens darks to match a pitch-black background */
+    filter: grayscale(100%) contrast(125%) brightness(90%);
+    transition: var(--transition);
 }
 
-.about-text h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.about-text p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
+/* Optional hover effect: slightly brightens up the details */
+.about-photo:hover {
+    filter: grayscale(100%) contrast(130%) brightness(100%);
 }
 
 /* Portfolio & Services Sections */
