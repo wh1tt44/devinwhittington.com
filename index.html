@@ -90,47 +90,98 @@
         </div>
     </section>
 
-    <!-- Contact & Footer Section -->
+<!-- Contact & Footer Section -->
     <footer id="contact" class="site-footer">
         <div class="container">
             <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Ready to collaborate? Fill out the form below or reach out directly.</p>
+                <h2>Let's Capture Your Story</h2>
+                <p>Have a date in mind or a project to discuss? Send a message below or connect directly—we usually respond within 24 hours.</p>
             </div>
             
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstname">First name</label>
-                        <input type="text" id="firstname" placeholder="First name">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last name</label>
-                        <input type="text" id="lastname" placeholder="Last name">
+            <div class="contact-wrapper">
+                <!-- Direct Contact & Trust Info Card -->
+                <div class="contact-info-card">
+                    <h3>Direct Contact</h3>
+                    <p class="info-intro">Prefer to talk directly? Reach out via phone or email for fast quotes and date availability.</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Quad Cities Region (IA / IL)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <strong>Email Direct</strong>
+                                <p><a href="mailto:info@devovisuals.com">info@devovisuals.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Call / Text</strong>
+                                <p><a href="tel:1234567890">(123) 456-7890</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⚡</span>
+                            <div>
+                                <strong>Turnaround & Response</strong>
+                                <p>Replies within 24 hrs | High-Speed Delivery</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" placeholder="Email" required>
+
+                <!-- Main Form -->
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent. Devin will reach out shortly.');">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">First name *</label>
+                            <input type="text" id="firstname" placeholder="First name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last name *</label>
+                            <input type="text" id="lastname" placeholder="Last name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email address *</label>
+                            <input type="email" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" placeholder="(555) 000-0000">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" placeholder="Phone">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" class="form-select">
+                            <option value="" disabled selected>Select service focus...</option>
+                            <option value="wedding">Wedding Videography / Photography</option>
+                            <option value="commercial">Commercial / Business Highlight</option>
+                            <option value="event">Special Event Coverage</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" rows="4" placeholder="Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-submit">Submit</button>
-            </form>
+                    <div class="form-group">
+                        <label for="message">Message / Event Details *</label>
+                        <textarea id="message" rows="4" placeholder="Tell us about your event, preferred dates, location, or vision..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                    <p class="form-privacy-note">🔒 Your information is private and never shared.</p>
+                </form>
+            </div>
 
             <div class="footer-bottom-grid">
                 <div class="footer-col">
                     <h3>STAY CONNECTED</h3>
                     <p>Sign up for Our Newsletter</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
                         <input type="email" placeholder="Email *" required>
                         <label class="checkbox-label">
                             <input type="checkbox" required> Yes, subscribe me to your newsletter. *
@@ -141,8 +192,8 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Shows</a></li>
-                        <li><a href="#about">Venue Info</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Gallery</a></li>
                     </ul>
                 </div>
@@ -165,7 +216,7 @@
             <p class="copyright">&copy; 2026 Devo Visuals. All rights reserved.</p>
         </div>
     </footer>
-
+    
     <!-- JavaScript for Mobile Navigation Toggle -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
