@@ -1,182 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Devo Visuals</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: #ffffff;
-      background-color: #0d0d0d;
-      overflow-x: hidden;
-    }
-
-    /* Background image set to 4.jpg with overlay */
-    .hero-container {
-      position: relative;
-      width: 100vw;
-      min-height: 100vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-                  url("4.jpg") repeat center center;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Header Navigation */
-    header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 3rem;
-      z-index: 10;
-    }
-
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      stroke: #ffffff;
-      fill: none;
-      stroke-width: 1.8;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: opacity 0.2s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    /* Hero Text & CTA */
-    .hero-content {
-      text-align: center;
-      margin: auto 0;
-      padding: 0 1rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.2rem, 3vw, 2.2rem);
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-    }
-
-    .btn-group {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .btn-outline {
-      border: 2px solid #ffffff;
-      background: transparent;
-      color: #ffffff;
-      padding: 0.65rem 1.8rem;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .btn-outline:hover {
-      background: #ffffff;
-      color: #000000;
-    }
-
-    .btn-accent {
-      background-color: #2b7fff;
-      color: #ffffff;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    /* Decorative Strip at Bottom */
-    .film-strip {
-      width: 100%;
-      height: 16px;
-      background: repeating-linear-gradient(
-        90deg,
-        #ffffff,
-        #ffffff 12px,
-        #000000 12px,
-        #000000 24px
-      );
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devo Visuals | Cinematic Video & Photography</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="hero-container">
-    <header>
-      <div class="logo">
-        <svg class="logo-icon" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#services">Services</a>
-      </nav>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.html">DEVO VISUALS</a>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="hero-content">
-      <h1 class="hero-title">CINEMATIC VIDEOS</h1>
-      <h2 class="hero-subtitle">WE DO IT RAW</h2>
-      <div class="btn-group">
-        <a href="#book" class="btn-outline">BOOK NOW</a>
-        <button class="btn-accent">Page</button>
-      </div>
-    </div>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2>CINEMATIC VIDEOS</h2>
+                <h4>WE DO IT RAW</h4>
+                <a href="#contact" class="btn-book">BOOK NOW</a>
+            </div>
+        </section>
 
-    <div class="film-strip"></div>
-  </div>
+        <!-- Sub-Banner Section -->
+        <section class="sub-banner">
+            <div class="banner-text">
+                <h3>MID-WEST BASED</h3>
+                <p>FILM - PHOTO</p>
+            </div>
+        </section>
 
-</body>
-</html>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- GitHub photo integration -->
+                    <img src="4.jpg" alt="Devo Visuals Photography">
+                </div>
+                <div class="about-text">
+                    <h3>Nice to meet you<br>I am Devin Whittington</h3>
+                    <p>I am a videographer and photographer who wants you to have a good experience and never force you away from anything. Do not take me seriously—but trust me, I take my work seriously. No, I haven't been holding a camera since I was bored as a kid, but I do know how to work professional equipment inside and out. My work isn't about stiff poses or awkward corporate fluff; it's about keeping things relaxed, real, and capturing the moment exactly as it happens. Zero pressure, high impact—you live the experience, and I'll make sure you get comfortable with being on camera.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery / Showcase Section -->
+        <section class="gallery-section">
+            <div class="section-title">
+                <h4>THE BEST MOMENTS, CAPTURED</h4>
+            </div>
+            <div class="portfolio-grid">
+                <div class="grid-item"><img src="4.jpg" alt="Portfolio Highlight"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="site-footer">
+        <p>&copy; 2026 Devo Visuals. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
