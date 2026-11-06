@@ -18,7 +18,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Prevents auto-zoom on mobile inputs */
     -webkit-text-size-adjust: 100%;
 }
 
@@ -95,7 +94,7 @@ body {
     background-color: var(--accent);
 }
 
-/* Hamburger Menu Button (Hidden on Desktop) */
+/* Mobile Toggle */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -117,7 +116,6 @@ body {
     transition: var(--transition);
 }
 
-/* Hamburger Animation */
 .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -130,14 +128,15 @@ body {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Hero Section */
+/* Hero Section (Main Background Set to 4.jpg) */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
     padding: 6rem 0 3rem 0;
-    background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    /* Uses dark overlay over 4.jpg */
+    background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('4.jpg') no-repeat center center/cover;
 }
 
 .hero-content {
@@ -243,7 +242,7 @@ body {
     margin-bottom: 1.2rem;
 }
 
-/* Portfolio & Services Sections */
+/* Portfolio & Services */
 .portfolio-section, .services-section {
     padding: 5rem 0;
     background-color: var(--bg-card);
@@ -310,7 +309,7 @@ body {
     font-weight: 600;
 }
 
-/* Services Cards */
+/* Services */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -345,7 +344,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Contact & Footer Section */
+/* Contact & Footer */
 .site-footer {
     padding: 5rem 0 3rem 0;
     background-color: var(--bg-card);
@@ -384,7 +383,7 @@ body {
     border-radius: 4px;
     color: var(--text-main);
     font-family: inherit;
-    font-size: 16px; /* Prevents auto-zoom on iOS safari */
+    font-size: 16px;
 }
 
 .form-group input:focus, .form-group textarea:focus {
@@ -407,7 +406,6 @@ body {
     background-color: var(--accent-hover);
 }
 
-/* Footer Bottom Layout */
 .footer-bottom-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
