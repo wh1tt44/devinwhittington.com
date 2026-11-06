@@ -34,7 +34,7 @@
         </div>
     </header>
 
-    <!-- Hero Section (Background image is set via CSS using 4.jpg) -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
             <span class="sub-heading">Mid-West Based | Film & Photo</span>
@@ -51,7 +51,7 @@
     <section id="about" class="about-section">
         <div class="container about-grid">
             <div class="about-img-wrapper">
-                <img src="4.jpg" alt="Devin Whittington Photography Work">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Devin Whittington Camera Gear">
             </div>
             <div class="about-text">
                 <h2>Nice to meet you<br>I am Devin Whittington</h2>
@@ -70,7 +70,7 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="4.jpg" alt="Wedding couple portrait">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding couple portrait">
                     <div class="gallery-overlay">
                         <h3>Timeless Weddings</h3>
                     </div>
@@ -200,17 +200,4 @@
         const navMenu = document.getElementById('nav-menu');
         const navItems = document.querySelectorAll('.nav-item');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    </script>
-</body>
-</html>
+        menuToggle.addEventListener('
