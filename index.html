@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devo Visuals | Professional Photography & Videography</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Devo Visuals</a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-links" id="nav-menu">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#about" class="nav-item">About</a>
+                <a href="#portfolio" class="nav-item">Portfolio</a>
+                <a href="#services" class="nav-item">Services</a>
+                <a href="#contact" class="btn-cta nav-item">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <span class="sub-heading">Mid-West Based | Film & Photo</span>
+            <h1>Cinematic Videos</h1>
+            <p>We do it raw. Zero pressure, high impact—capturing real moments as they happen.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Book Now</a>
+                <a href="#portfolio" class="btn btn-secondary">Explore Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Devin Whittington Camera Gear">
+            </div>
+            <div class="about-text">
+                <h2>Nice to meet you<br>I am Devin Whittington</h2>
+                <p>I am a videographer and photographer who wants you to have a good experience and never force you away from anything. Do not take me seriously—but trust me, I take my work seriously. No, I haven't been holding a camera since I was bored as a kid, but I do know how to work professional equipment inside and out.</p>
+                <p>My work isn't about stiff poses or awkward corporate fluff; it's about keeping things relaxed, real, and capturing the moment exactly as it happens. Zero pressure, high impact—you live the experience, and I'll make sure you get comfortable with being on camera.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Best Moments, Captured</h2>
+                <p>A look into recent wedding coverages and cinematic event productions.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding couple portrait">
+                    <div class="gallery-overlay">
+                        <h3>Timeless Weddings</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Wedding celebration">
+                    <div class="gallery-overlay">
+                        <h3>Event Details</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Bride and groom moments">
+                    <div class="gallery-overlay">
+                        <h3>Cinematic Stories</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services & Packages</h2>
+                <p>Tailored visual packages designed for weddings, events, and commercial projects.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Wedding Coverage</h3>
+                    <p class="price">Starting at $2,000</p>
+                    <p>Full-day coverage, multi-camera cinematic videography, high-resolution edited galleries, and customized client delivery platforms.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Engagement Sessions</h3>
+                    <p class="price">Starting at $350</p>
+                    <p>1-2 hours of relaxed shooting, professional grading, online digital gallery, and complete print rights.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Commercial & Events</h3>
+                    <p class="price">Custom Quote</p>
+                    <p>Dynamic videography for venues, brand highlights, and local event setups with efficient turnarounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Ready to collaborate? Fill out the form below or reach out directly.</p>
+            </div>
+            
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstname">First name</label>
+                        <input type="text" id="firstname" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last name</label>
+                        <input type="text" id="lastname" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" rows="4" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+
+            <div class="footer-bottom-grid">
+                <div class="footer-col">
+                    <h3>STAY CONNECTED</h3>
+                    <p>Sign up for Our Newsletter</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Email *" required>
+                        <label class="checkbox-label">
+                            <input type="checkbox" required> Yes, subscribe me to your newsletter. *
+                        </label>
+                        <button type="submit" class="btn-sub">SUBMIT</button>
+                    </form>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Shows</a></li>
+                        <li><a href="#about">Venue Info</a></li>
+                        <li><a href="#portfolio">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>FOLLOW US</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">X</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>CONTACT US</h3>
+                    <p>info@devovisuals.com</p>
+                    <p>123-456-7890</p>
+                    <p>Quad Cities Region, IA/IL</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Devo Visuals. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Navigation Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        menuToggle.addEventListener('
