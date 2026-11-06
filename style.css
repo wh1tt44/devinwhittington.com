@@ -360,9 +360,71 @@ body {
     border-top: 1px solid var(--border);
 }
 
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    align-items: start;
+}
+
+/* Trust / Direct Info Card */
+.contact-info-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+.contact-info-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-main);
+}
+
+.info-intro {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.info-item p, .info-item a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.info-item a:hover {
+    color: var(--text-main);
+}
+
+/* Contact Form Adjustments */
 .contact-form {
-    max-width: 700px;
-    margin: 0 auto 4rem auto;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -370,3 +432,74 @@ body {
 
 .form-row {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea,
+.form-select {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 0.9rem;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-select option {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--text-main);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-hover);
+}
+
+.form-privacy-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+/* Responsive Grid for Contact Wrapper */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
