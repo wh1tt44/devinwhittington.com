@@ -217,10 +217,36 @@
         </div>
     </footer>
     
-    <!-- JavaScript for Mobile Navigation Toggle -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const navItems = document.querySelectorAll('.nav-item');
+   <div class="footer-col newsletter-col">
+    <div class="newsletter-badge">THE INSIDER DISPATCH</div>
+    <h3>Get Preferred Booking & Behind-the-Lens Recaps</h3>
+    <p class="newsletter-desc">Join the VIP list for direct access to exclusive Midwest shoot dates, price drops, and creative film breakdowns.</p>
+    
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the VIP list!');">
+        <!-- Interactive Interest Tags -->
+        <div class="interest-tags">
+            <label class="tag-chip">
+                <input type="checkbox" name="interest" value="weddings" checked>
+                <span>Weddings</span>
+            </label>
+            <label class="tag-chip">
+                <input type="checkbox" name="interest" value="commercial">
+                <span>Commercial</span>
+            </label>
+            <label class="tag-chip">
+                <input type="checkbox" name="interest" value="events">
+                <span>Events</span>
+            </label>
+        </div>
 
-        menuToggle.addEventListener('
+        <div class="input-with-button">
+            <input type="email" placeholder="Enter your email address..." required>
+            <button type="submit" class="btn-sub">JOIN LIST</button>
+        </div>
+        
+        <label class="checkbox-label privacy-consent">
+            <input type="checkbox" required>
+            <span>I agree to receive occasional emails. Zero spam, ever.</span>
+        </label>
+    </form>
+</div>
