@@ -41,12 +41,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent; /* Changed from semi-transparent black to fully transparent */
-    backdrop-filter: blur(8px); /* Optional: adds a subtle modern frosted-glass blur effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border so it doesn't vanish entirely */
+    background-color: transparent;
+    backdrop-filter: none; /* Removes the frosted glass effect */
+    border-bottom: none; /* Removes the bottom line completely */
     z-index: 1000;
-    padding: 1.2rem 0; /* Slightly increased vertical padding for a cleaner look */
-    transition: var(--transition);
+    padding: 1.2rem 0;
 }
 
 .nav-container {
