@@ -116,14 +116,14 @@
                             <span class="info-icon">✉️</span>
                             <div>
                                 <strong>Email Direct</strong>
-                                <p><a href="mailto:info@devovisuals.com">d.whittington.work@gmail.com</a></p>
+                                <p><a href="mailto:info@devovisuals.com">info@devovisuals.com</a></p>
                             </div>
                         </div>
                         <div class="info-item">
                             <span class="info-icon">📞</span>
                             <div>
-                                <strong> Text</strong>
-                                <p><a href="tel:1234567890">(563) 279-0966</a></p>
+                                <strong>Call / Text</strong>
+                                <p><a href="tel:1234567890">(123) 456-7890</a></p>
                             </div>
                         </div>
                         <div class="info-item">
@@ -136,45 +136,122 @@
                     </div>
                 </div>
 
-<!-- Main Form -->
-<form id="contact-form" class="contact-form" action="https://formspree.io/f/mljjkwpe" method="POST">
-    <div class="form-row">
-        <div class="form-group">
-            <label for="firstname">First name *</label>
-            <input type="text" id="firstname" name="first_name" placeholder="First name" required>
+                <!-- Main Form (Connected to your personal Web3Forms submission key) -->
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <!-- Your Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="eff25463-9958-424f-9253-eb5499c2bd37">
+                    
+                    <!-- Subject line for your incoming emails -->
+                    <input type="hidden" name="subject" value="New Inquiry from Devo Visuals Website">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">First name *</label>
+                            <input type="text" id="firstname" name="first_name" placeholder="First name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last name *</label>
+                            <input type="text" id="lastname" name="last_name" placeholder="Last name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email address *</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project_type" class="form-select">
+                            <option value="" disabled selected>Select service focus...</option>
+                            <option value="wedding">Wedding Videography / Photography</option>
+                            <option value="commercial">Commercial / Business Highlight</option>
+                            <option value="event">Special Event Coverage</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message / Event Details *</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your event, preferred dates, location, or vision..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                    <p class="form-privacy-note">🔒 Your information is private and never shared.</p>
+                </form>
+            </div>
+
+            <div class="footer-bottom-grid">
+                <div class="footer-col newsletter-col">
+                    <div class="newsletter-badge">THE INSIDER DISPATCH</div>
+                    <h3>Get Preferred Booking & Behind-the-Lens Recaps</h3>
+                    <p class="newsletter-desc">Join the VIP list for direct access to exclusive Midwest shoot dates, price drops, and creative film breakdowns.</p>
+                    
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the VIP list!');">
+                        <div class="interest-tags">
+                            <label class="tag-chip">
+                                <input type="checkbox" name="interest" value="weddings" checked>
+                                <span>Weddings</span>
+                            </label>
+                            <label class="tag-chip">
+                                <input type="checkbox" name="interest" value="commercial">
+                                <span>Commercial</span>
+                            </label>
+                            <label class="tag-chip">
+                                <input type="checkbox" name="interest" value="events">
+                                <span>Events</span>
+                            </label>
+                        </div>
+
+                        <div class="input-with-button">
+                            <input type="email" placeholder="Enter your email address..." required>
+                            <button type="submit" class="btn-sub">JOIN LIST</button>
+                        </div>
+                        
+                        <label class="checkbox-label privacy-consent">
+                            <input type="checkbox" required>
+                            <span>I agree to receive occasional emails. Zero spam, ever.</span>
+                        </label>
+                    </form>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>FOLLOW US</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">X</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>CONTACT US</h3>
+                    <p>info@devovisuals.com</p>
+                    <p>123-456-7890</p>
+                    <p>Quad Cities Region, IA/IL</p>
+                </div>
+            </div>
+            
+            <p class="copyright">&copy; 2026 Devo Visuals. All rights reserved.</p>
         </div>
-        <div class="form-group">
-            <label for="lastname">Last name *</label>
-            <input type="text" id="lastname" name="last_name" placeholder="Last name" required>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group">
-            <label for="email">Email address *</label>
-            <input type="email" id="email" name="email" placeholder="name@example.com" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="project-type">Project Type</label>
-        <select id="project-type" name="project_type" class="form-select">
-            <option value="" disabled selected>Select service focus...</option>
-            <option value="wedding">Wedding Videography / Photography</option>
-            <option value="commercial">Commercial / Business Highlight</option>
-            <option value="event">Special Event Coverage</option>
-            <option value="other">Other Inquiry</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="message">Message / Event Details *</label>
-        <textarea id="message" name="message" rows="4" placeholder="Tell us about your event, preferred dates, location, or vision..." required></textarea>
-    </div>
-    <button type="submit" id="submit-btn" class="btn btn-submit">Send Message</button>
-    <p class="form-privacy-note">🔒 Your information is private and never shared.</p>
-</form>
+    </footer>
 
 <!-- Custom In-Page Success Message (Initially Hidden) -->
 <div id="form-success-message" class="form-success-card" style="display: none;">
