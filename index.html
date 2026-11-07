@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
     <header class="site-header">
         <div class="container nav-container">
             <a href="#" class="logo">Devo Visuals</a>
-           
+            
             <!-- Mobile Menu Toggle Button -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
                 <span class="bar"></span>
@@ -45,12 +45,12 @@
         </div>
     </div>
 </section>
-   
-    <!-- About Section -->
+    
+<!-- About Section -->
     <section id="about" class="about-section">
         <div class="container about-grid">
             <div class="about-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Devin Whittington Camera Gear">
+                <img src="nnamed (1).jpg" alt="Devin Whittington" class="about-photo">
             </div>
             <div class="about-text">
                 <h2>Nice to meet you<br>I am Devin Whittington</h2>
@@ -90,113 +90,173 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Services & Packages</h2>
-                <p>Tailored visual packages designed for weddings, events, and commercial projects.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Wedding Coverage</h3>
-                    <p class="price">Starting at $2,000</p>
-                    <p>Full-day coverage, multi-camera cinematic videography, high-resolution edited galleries, and customized client delivery platforms.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Engagement Sessions</h3>
-                    <p class="price">Starting at $350</p>
-                    <p>1-2 hours of relaxed shooting, professional grading, online digital gallery, and complete print rights.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Commercial & Events</h3>
-                    <p class="price">Custom Quote</p>
-                    <p>Dynamic videography for venues, brand highlights, and local event setups with efficient turnarounds.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Footer Section -->
+<!-- Contact & Footer Section -->
     <footer id="contact" class="site-footer">
         <div class="container">
             <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Ready to collaborate? Fill out the form below or reach out directly.</p>
+                <h2>Let's Capture Your Story</h2>
+                <p>Have a date in mind or a project to discuss? Send a message below or connect directly—we usually respond within 24 hours.</p>
             </div>
-           
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstname">First name</label>
-                        <input type="text" id="firstname" placeholder="First name">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last name</label>
-                        <input type="text" id="lastname" placeholder="Last name">
+            
+            <div class="contact-wrapper">
+                <!-- Direct Contact & Trust Info Card -->
+                <div class="contact-info-card">
+                    <h3>Direct Contact</h3>
+                    <p class="info-intro">Prefer to talk directly? Reach out via phone or email for fast quotes and date availability.</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Quad Cities Region (IA / IL)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <strong>Email Direct</strong>
+                                <p><a href="mailto:info@devovisuals.com">info@devovisuals.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Call / Text</strong>
+                                <p><a href="tel:1234567890">(123) 456-7890</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⚡</span>
+                            <div>
+                                <strong>Turnaround & Response</strong>
+                                <p>Replies within 24 hrs | High-Speed Delivery</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" placeholder="Phone">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" rows="4" placeholder="Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-submit">Submit</button>
-            </form>
 
-            <div class="footer-bottom-grid">
-                <div class="footer-col">
-                    <h3>STAY CONNECTED</h3>
-                    <p>Sign up for Our Newsletter</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault();">
-                        <input type="email" placeholder="Email *" required>
-                        <label class="checkbox-label">
-                            <input type="checkbox" required> Yes, subscribe me to your newsletter. *
-                        </label>
-                        <button type="submit" class="btn-sub">SUBMIT</button>
-                    </form>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Shows</a></li>
-                        <li><a href="#about">Venue Info</a></li>
-                        <li><a href="#portfolio">Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>FOLLOW US</h3>
-                    <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Youtube</a></li>
-                        <li><a href="#">X</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>CONTACT US</h3>
-                    <p>info@devovisuals.com</p>
-                    <p>123-456-7890</p>
-                    <p>Quad Cities Region, IA/IL</p>
-                </div>
+<!-- Main Contact Form Container -->
+<div class="form-container">
+    <form id="devo-contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Your Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="eff25463-9958-424f-9253-eb5499c2bd37">
+        <input type="hidden" name="subject" value="New Inquiry from Devo Visuals Website">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstname">First name *</label>
+                <input type="text" id="firstname" name="first_name" placeholder="First name" required>
             </div>
-            <p class="copyright">&copy; 2026 Devo Visuals. All rights reserved.</p>
+            <div class="form-group">
+                <label for="lastname">Last name *</label>
+                <input type="text" id="lastname" name="last_name" placeholder="Last name" required>
+            </div>
         </div>
-    </footer>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-type">Project Type</label>
+            <select id="project-type" name="project_type" class="form-select">
+                <option value="" disabled selected>Select service focus...</option>
+                <option value="wedding">Wedding Videography / Photography</option>
+                <option value="commercial">Commercial / Business Highlight</option>
+                <option value="event">Special Event Coverage</option>
+                <option value="other">Other Inquiry</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message / Event Details *</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your event, preferred dates, location, or vision..." required></textarea>
+        </div>
+        
+        <button type="submit" id="submit-btn" class="btn btn-submit">Send Message</button>
+        <p class="form-privacy-note">🔒 Your information is private and never shared.</p>
+    </form>
 
-    <!-- JavaScript for Mobile Navigation Toggle -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const navItems = document.querySelectorAll('.nav-item');
+    <!-- Custom Thank You Card (Initially Hidden) -->
+    <div id="thank-you-card" class="thank-you-card" style="display: none;">
+        <div class="thank
+<!-- Custom In-Page Success Message (Initially Hidden) -->
+<div id="form-success-message" class="form-success-card" style="display: none;">
+    <div class="success-icon">✓</div>
+    <h3>Message Sent!</h3>
+    <p>Thanks for reaching out! Devin will review your details and get back to you within 24 hours.</p>
+</div>
+<script>
+    
+<script>
+    const contactForm = document.getElementById('devo-contact-form');
+    const thankYouCard = document.getElementById('thank-you-card');
+    const submitBtn = document.getElementById('submit-btn');
 
-        menuToggle.addEventListener('
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'SENDING...';
+
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    contactForm.style.display = 'none';
+                    thankYouCard.style.display = 'block';
+                } else {
+                    alert('Something went wrong. Please try again!');
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Send Message';
+                }
+            } catch (error) {
+                alert('Connection error. Please try again!');
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Send Message';
+            }
+        });
+    }
+</script>
+                
+        <!-- Interactive Interest Tags -->
+        <div class="interest-tags">
+            <label class="tag-chip">
+                <input type="checkbox" name="interest" value="weddings" checked>
+                <span>Weddings</span>
+            </label>
+            <label class="tag-chip">
+                <input type="checkbox" name="interest" value="commercial">
+                <span>Commercial</span>
+            </label>
+            <label class="tag-chip">
+                <input type="checkbox" name="interest" value="events">
+                <span>Events</span>
+            </label>
+        </div>
+
+        <div class="input-with-button">
+            <input type="email" placeholder="Enter your email address..." required>
+            <button type="submit" class="btn-sub">JOIN LIST</button>
+        </div>
+        
+        <label class="checkbox-label privacy-consent">
+            <input type="checkbox" required>
+            <span>I agree to receive occasional emails. Zero spam, ever.</span>
+        </label>
+    </form>
+</div>
