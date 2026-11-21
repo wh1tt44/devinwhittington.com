@@ -724,6 +724,11 @@ body {
 }
 
 /* ===== Scroll effect: sections slide over the pinned hero ===== */
+/* "clip" (not "hidden") keeps position: sticky working on phones */
+body {
+    overflow-x: clip;
+}
+
 .hero {
     position: sticky;
     top: 0;
@@ -740,10 +745,10 @@ body {
 /* Glitch bars on the seam between the hero and About */
 .glitch-bars {
     position: absolute;
-    top: -16px;
+    top: -48px;
     left: 0;
     width: 100%;
-    height: 16px;
+    height: 48px;
     background: #000;
     overflow: hidden;
     pointer-events: none;
@@ -751,9 +756,8 @@ body {
 
 .glitch-bars span {
     position: absolute;
-    top: 0;
     left: 0;
-    height: 100%;
+    height: 10px;
     background: #fff;
     will-change: transform;
 }
