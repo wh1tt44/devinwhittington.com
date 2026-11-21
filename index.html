@@ -291,6 +291,17 @@
             });
         }
  
+        // Center the About section when any About link is clicked
+        document.querySelectorAll('a[href="#about"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('about').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+        });
+        
         // Contact Form AJAX Submission
         const contactForm = document.getElementById('devo-contact-form');
         const thankYouCard = document.getElementById('thank-you-card');
