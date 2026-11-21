@@ -304,29 +304,38 @@
             });
         });
 
-        // Glitch bars that slide as you scroll
+        // Scroll effect: glitch bars slide + hero text drifts and fades
         const glitchBars = document.getElementById('glitch-bars');
+        const heroContent = document.querySelector('.hero-content');
         if (glitchBars) {
-            const blocks = [];
-            for (let i = 0; i < 28; i++) {
-                const bar = document.createElement('span');
-                bar.style.width = (2 + Math.random() * 9) + '%';
-                bar.dataset.base = Math.random();
-                bar.dataset.speed = (Math.random() * 1.6 - 0.8).toFixed(2);
-                glitchBars.appendChild(bar);
-                blocks.push(bar);
+            const bars = [];
+            for (let row = 0; row < 3; row++) {
+                for (let i = 0; i < 14; i++) {
+                    const bar = document.createElement('span');
+                    bar.style.top = (row * 16 + 3) + 'px';
+                    bar.style.width = (3 + Math.random() * 12) + '%';
+                    bar.dataset.base = Math.random();
+                    bar.dataset.speed = ((Math.random() * 1.2 + 0.3) * (row % 2 ? -1 : 1)).toFixed(2);
+                    glitchBars.appendChild(bar);
+                    bars.push(bar);
+                }
             }
-            const moveBars = () => {
+            const updateScrollEffect = () => {
                 const w = glitchBars.offsetWidth;
                 const y = window.scrollY;
-                blocks.forEach(bar => {
+                bars.forEach(bar => {
                     const x = ((bar.dataset.base * w + y * bar.dataset.speed) % w + w) % w;
                     bar.style.transform = 'translateX(' + x + 'px)';
                 });
+                if (heroContent) {
+                    const p = Math.min(y / window.innerHeight, 1);
+                    heroContent.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+                    heroContent.style.opacity = 1 - p * 0.9;
+                }
             };
-            moveBars();
-            window.addEventListener('scroll', moveBars, { passive: true });
-            window.addEventListener('resize', moveBars);
+            updateScrollEffect();
+            window.addEventListener('scroll', updateScrollEffect, { passive: true });
+            window.addEventListener('resize', updateScrollEffect);
         }
 
         // Contact Form AJAX Submission
