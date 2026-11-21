@@ -1,5 +1,5 @@
 /* CSS Reset & Fixes */
-* {
+- {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -342,6 +342,23 @@ body {
 .gallery-overlay h3 {
     font-size: 1.15rem;
     font-weight: 600;
+}
+
+.portfolio-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.portfolio-cta .btn {
+    display: inline-block;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.portfolio-cta .btn-secondary:hover {
+    transform: translateY(-2px);
+    background-color: var(--text-main);
+    color: var(--bg-dark);
 }
 
 /* Contact & Footer Section */
