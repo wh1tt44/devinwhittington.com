@@ -10,19 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
+ 
     <!-- Header / Navigation -->
     <header class="site-header">
         <div class="container nav-container">
             <a href="#" class="logo">Devo Visuals</a>
-            
+ 
             <!-- Mobile Menu Toggle Button -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-
+ 
             <!-- Navigation Links -->
             <nav class="nav-links" id="nav-menu">
                 <a href="#home" class="nav-item">Home</a>
@@ -32,19 +32,32 @@
             </nav>
         </div>
     </header>
-
+ 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- 9-photo grid background (desktop). Mobile shows a single photo. -->
+        <div class="hero-grid" aria-hidden="true">
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+            <div class="hero-tile"></div>
+        </div>
+ 
         <div class="container hero-content">
             <span class="sub-heading">Mid-West Based | Film & Photo</span>
             <h1>Cinematic Videos</h1>
             <h3>WE DO IT RAW</h3>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Book Now</a>
+                <a href="#contact-form" class="btn btn-primary">Book Now</a>
             </div>
         </div>
     </section>
-        
+ 
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container about-grid">
@@ -58,7 +71,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Portfolio Gallery Section -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
@@ -88,7 +101,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Contact & Footer Section -->
     <footer id="contact" class="site-footer">
         <div class="container">
@@ -96,13 +109,13 @@
                 <h2>Let's Capture Your Story</h2>
                 <p>Have a date in mind or a project to discuss? Send a message below or connect directly—we usually respond within 24 hours.</p>
             </div>
-            
+ 
             <div class="contact-wrapper">
                 <!-- Direct Contact & Trust Info Card -->
                 <div class="contact-info-card">
                     <h3>Direct Contact</h3>
                     <p class="info-intro">Prefer to talk directly? Reach out via phone or email for fast quotes and date availability.</p>
-                    
+ 
                     <div class="info-items">
                         <div class="info-item">
                             <span class="info-icon">📍</span>
@@ -122,7 +135,7 @@
                             <span class="info-icon">📞</span>
                             <div>
                                 <strong> Text</strong>
-                                <p><a href="tel:1234567890">(563) 279-0966</a></p>
+                                <p><a href="tel:5632790966">(563) 279-0966</a></p>
                             </div>
                         </div>
                         <div class="info-item">
@@ -134,13 +147,13 @@
                         </div>
                     </div>
                 </div>
-
+ 
                 <!-- Main Contact Form Container -->
-                <div class="form-container">
+                <div class="form-container" id="contact-form">
                     <form id="devo-contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="eff25463-9958-424f-9253-eb5499c2bd37">
                         <input type="hidden" name="subject" value="New Inquiry from Devo Visuals Website">
-
+ 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstname">First name *</label>
@@ -151,7 +164,7 @@
                                 <input type="text" id="lastname" name="last_name" placeholder="Last name" required>
                             </div>
                         </div>
-                        
+ 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email address *</label>
@@ -162,7 +175,7 @@
                                 <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
                             </div>
                         </div>
-                        
+ 
                         <div class="form-group">
                             <label for="project-type">Project Type</label>
                             <select id="project-type" name="project_type" class="form-select">
@@ -173,16 +186,16 @@
                                 <option value="other">Other Inquiry</option>
                             </select>
                         </div>
-                        
+ 
                         <div class="form-group">
                             <label for="message">Message / Event Details *</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your event, preferred dates, location, or vision..." required></textarea>
                         </div>
-                        
+ 
                         <button type="submit" id="submit-btn" class="btn btn-submit">Send Message</button>
                         <p class="form-privacy-note">🔒 Your information is private and never shared.</p>
                     </form>
-
+ 
                     <!-- Custom Thank You Card (Initially Hidden) -->
                     <div id="thank-you-card" class="thank-you-card" style="display: none;">
                         <div class="thank-you-badge">RECEIVED</div>
@@ -192,14 +205,14 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Original Footer Layout -->
             <div class="footer-bottom-grid">
                 <div class="footer-col newsletter-col">
                     <div class="newsletter-badge">THE INSIDER DISPATCH</div>
                     <h3>Get Preferred Booking & Behind-the-Lens Recaps</h3>
                     <p class="newsletter-desc">Join the VIP list for direct access to exclusive Midwest shoot dates, price drops, and creative film breakdowns.</p>
-                    
+ 
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the VIP list!');">
                         <div class="interest-tags">
                             <label class="tag-chip">
@@ -215,19 +228,19 @@
                                 <span>Events</span>
                             </label>
                         </div>
-
+ 
                         <div class="input-with-button">
                             <input type="email" placeholder="Enter your email address..." required>
                             <button type="submit" class="btn-sub">JOIN LIST</button>
                         </div>
-                        
+ 
                         <label class="checkbox-label privacy-consent">
                             <input type="checkbox" required>
                             <span>I agree to receive occasional emails. Zero spam, ever.</span>
                         </label>
                     </form>
                 </div>
-                
+ 
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
@@ -236,7 +249,7 @@
                         <li><a href="#portfolio">Gallery</a></li>
                     </ul>
                 </div>
-                
+ 
                 <div class="footer-col">
                     <h3>FOLLOW US</h3>
                     <ul>
@@ -245,7 +258,7 @@
                         <li><a href="#">Youtube</a></li>
                     </ul>
                 </div>
-                
+ 
                 <div class="footer-col">
                     <h3>CONTACT US</h3>
                     <p>d.whittington.work@gmail.com</p>
@@ -253,44 +266,52 @@
                     <p>Quad Cities Region, IA/IL</p>
                 </div>
             </div>
-            
+ 
             <p class="copyright">&copy; 2026 Devo Visuals. All rights reserved.</p>
         </div>
     </footer>
-
+ 
     <!-- Site Scripts -->
     <script>
         // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
-
+ 
         if (menuToggle && navMenu) {
             menuToggle.addEventListener('click', () => {
                 menuToggle.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
+ 
+            // Close the menu whenever a nav link is tapped
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
         }
-
+ 
         // Contact Form AJAX Submission
         const contactForm = document.getElementById('devo-contact-form');
         const thankYouCard = document.getElementById('thank-you-card');
         const submitBtn = document.getElementById('submit-btn');
-
+ 
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 submitBtn.disabled = true;
                 submitBtn.innerText = 'SENDING...';
-
+ 
                 const formData = new FormData(contactForm);
-                
+ 
                 try {
                     const response = await fetch(contactForm.action, {
                         method: 'POST',
                         body: formData
                     });
                     const result = await response.json();
-
+ 
                     if (result.success) {
                         contactForm.style.display = 'none';
                         thankYouCard.style.display = 'block';
@@ -309,3 +330,4 @@
     </script>
 </body>
 </html>
+ 
