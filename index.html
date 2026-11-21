@@ -291,11 +291,11 @@
             });
         }
  
-        // Center the About section when any About link is clicked
-        document.querySelectorAll('a[href="#about"]').forEach(link => {
+        // Center the section when its link or button is clicked
+        document.querySelectorAll('a[href="#about"], a[href="#portfolio"], a[href="#contact-form"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.getElementById('about').scrollIntoView({
+                document.getElementById(link.getAttribute('href').slice(1)).scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
                 });
