@@ -1,369 +1,763 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devo Visuals | Professional Photography & Videography</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+/* CSS Reset & Fixes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Header / Navigation -->
-    <header class="site-header">
-        <div class="container nav-container">
-            <a href="#" class="logo">Devo Visuals</a>
+:root {
+    --bg-dark: #000000;
+    --bg-card: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --accent: #ffffff;
+    --accent-hover: #cccccc;
+    --border: #222222;
+    --transition: all 0.3s ease;
+}
 
-            <!-- Mobile Menu Toggle Button -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
 
-            <!-- Navigation Links -->
-            <nav class="nav-links" id="nav-menu">
-                <a href="#home" class="nav-item">Home</a>
-                <a href="#about" class="nav-item">About</a>
-                <a href="#portfolio" class="nav-item">Portfolio</a>
-                <a href="#contact-form" class="btn-cta nav-item">Contact Us</a>
-            </nav>
-        </div>
-    </header>
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- 9-photo grid background (desktop). Mobile shows a single photo. -->
-        <div class="hero-grid" aria-hidden="true">
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-        </div>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
 
-        <div class="container hero-content">
-            <span class="sub-heading">Mid-West Based | Film & Photo</span>
-            <h1>Cinematic Videos</h1>
-            <h3>WE DO IT RAW</h3>
-            <div class="hero-buttons">
-                <a href="#contact-form" class="btn btn-primary">Book Now</a>
-            </div>
-        </div>
-    </section>
+/* Header & Mobile Nav */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
+    z-index: 1000;
+    padding: 1.2rem 0;
+}
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="glitch-bars" id="glitch-bars" aria-hidden="true"></div>
-        <div class="container about-grid">
-            <div class="about-img-wrapper">
-                <img src="pic" alt="Devin Whittington" class="about-photo">
-            </div>
-            <div class="about-text">
-                <h2>Nice to meet you<br>I am Devin Whittington</h2>
-                <p>I am a videographer and photographer who wants you to have a good experience and never force you away from anything. Do not take me seriously—but trust me, I take my work seriously. No, I haven't been holding a camera since I was bored as a kid, but I do know how to work professional equipment inside and out.</p>
-                <p>My work isn't about stiff poses or awkward corporate fluff; it's about keeping things relaxed, real, and capturing the moment exactly as it happens. Zero pressure, high impact—you live the experience, and I'll make sure you get comfortable with being on camera.</p>
-            </div>
-        </div>
-    </section>
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <!-- Portfolio Gallery Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Best Moments, Captured</h2>
-                <p>A look into recent wedding coverages and cinematic event productions.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding couple portrait">
-                    <div class="gallery-overlay">
-                        <h3>Timeless Weddings</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Wedding celebration">
-                    <div class="gallery-overlay">
-                        <h3>Event Details</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Bride and groom moments">
-                    <div class="gallery-overlay">
-                        <h3>Cinematic Stories</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    z-index: 1001;
+}
 
-    <!-- Contact & Footer Section -->
-    <footer id="contact" class="site-footer">
-        <div class="container">
-            <div class="section-header">
-                <h2>Let's Capture Your Story</h2>
-                <p>Have a date in mind or a project to discuss? Send a message below or connect directly—we usually respond within 24 hours.</p>
-            </div>
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 
-            <div class="contact-wrapper">
-                <!-- Direct Contact & Trust Info Card -->
-                <div class="contact-info-card">
-                    <h3>Direct Contact</h3>
-                    <p class="info-intro">Prefer to talk directly? Reach out via phone or email for fast quotes and date availability.</p>
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
 
-                    <div class="info-items">
-                        <div class="info-item">
-                            <span class="info-icon">📍</span>
-                            <div>
-                                <strong>Location</strong>
-                                <p>Quad Cities Region (IA / IL)</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">✉️</span>
-                            <div>
-                                <strong>Email Direct</strong>
-                                <p><a href="mailto:d.whittington.work@gmail.com">d.whittington.work@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <div>
-                                <strong> Text</strong>
-                                <p><a href="tel:5632790966">(563) 279-0966</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">⚡</span>
-                            <div>
-                                <strong>Turnaround & Response</strong>
-                                <p>Replies within 24 hrs | High-Speed Delivery</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+.nav-links a:hover {
+    color: var(--text-main);
+}
 
-                <!-- Main Contact Form Container -->
-                <div class="form-container" id="contact-form">
-                    <form id="devo-contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="eff25463-9958-424f-9253-eb5499c2bd37">
-                        <input type="hidden" name="subject" value="New Inquiry from Devo Visuals Website">
+.btn-cta {
+    background-color: var(--text-main);
+    color: var(--bg-dark) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    text-align: center;
+}
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstname">First name *</label>
-                                <input type="text" id="firstname" name="first_name" placeholder="First name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Last name *</label>
-                                <input type="text" id="lastname" name="last_name" placeholder="Last name" required>
-                            </div>
-                        </div>
+.btn-cta:hover {
+    background-color: var(--accent-hover);
+}
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email address *</label>
-                                <input type="email" id="email" name="email" placeholder="name@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
-                            </div>
-                        </div>
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
 
-                        <div class="form-group">
-                            <label for="project-type">Project Type</label>
-                            <select id="project-type" name="project_type" class="form-select">
-                                <option value="" disabled selected>Select service focus...</option>
-                                <option value="wedding">Wedding Videography / Photography</option>
-                                <option value="commercial">Commercial / Business Highlight</option>
-                                <option value="event">Special Event Coverage</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
-                        </div>
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: var(--transition);
+}
 
-                        <div class="form-group">
-                            <label for="message">Message / Event Details *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your event, preferred dates, location, or vision..." required></textarea>
-                        </div>
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
 
-                        <button type="submit" id="submit-btn" class="btn btn-submit">Send Message</button>
-                        <p class="form-privacy-note">🔒 Your information is private and never shared.</p>
-                    </form>
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
 
-                    <!-- Custom Thank You Card (Initially Hidden) -->
-                    <div id="thank-you-card" class="thank-you-card" style="display: none;">
-                        <div class="thank-you-badge">RECEIVED</div>
-                        <h3>Message Sent Directly to Devin!</h3>
-                        <p>Appreciate you reaching out. I take my work seriously—I'll review your details and get back to you within 24 hours.</p>
-                        <button class="btn btn-submit" style="margin-top: 1.5rem;" onclick="location.reload();">Send Another Message</button>
-                    </div>
-                </div>
-            </div>
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
 
-            <!-- Original Footer Layout -->
-            <div class="footer-bottom-grid">
-                <div class="footer-col newsletter-col">
-                    <div class="newsletter-badge">THE INSIDER DISPATCH</div>
-                    <h3>Get Preferred Booking & Behind-the-Lens Recaps</h3>
-                    <p class="newsletter-desc">Join the VIP list for direct access to exclusive Midwest shoot dates, price drops, and creative film breakdowns.</p>
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 0 3rem 0;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+}
 
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the VIP list!');">
-                        <div class="interest-tags">
-                            <label class="tag-chip">
-                                <input type="checkbox" name="interest" value="weddings" checked>
-                                <span>Weddings</span>
-                            </label>
-                            <label class="tag-chip">
-                                <input type="checkbox" name="interest" value="commercial">
-                                <span>Commercial</span>
-                            </label>
-                            <label class="tag-chip">
-                                <input type="checkbox" name="interest" value="events">
-                                <span>Events</span>
-                            </label>
-                        </div>
+/* 3x3 grid of photos behind the hero text */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    z-index: 0;
+}
 
-                        <div class="input-with-button">
-                            <input type="email" placeholder="Enter your email address..." required>
-                            <button type="submit" class="btn-sub">JOIN LIST</button>
-                        </div>
+.hero-tile {
+    background: url('4.jpg') no-repeat center center / cover;
+    filter: grayscale(100%);
+}
 
-                        <label class="checkbox-label privacy-consent">
-                            <input type="checkbox" required>
-                            <span>I agree to receive occasional emails. Zero spam, ever.</span>
-                        </label>
-                    </form>
-                </div>
+/* Dark overlay so the text stays readable */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+    z-index: 1;
+}
 
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Gallery</a></li>
-                    </ul>
-                </div>
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-                <div class="footer-col">
-                    <h3>FOLLOW US</h3>
-                    <ul>
-                        <li><a href="https://www.instagram.com/devovisuals" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="https://www.facebook.com/devovisuals" target="_blank" rel="noopener">Facebook</a></li>
-                        <li><a href="https://youtube.com/@devovisuals" target="_blank" rel="noopener">Youtube</a></li>
-                    </ul>
-                </div>
+.sub-heading {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
 
-                <div class="footer-col">
-                    <h3>CONTACT US</h3>
-                    <p>d.whittington.work@gmail.com</p>
-                    <p>563-279-0966</p>
-                    <p>Quad Cities Region, IA/IL</p>
-                </div>
-            </div>
+.hero h1 {
+    font-size: clamp(2.8rem, 6.5vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: var(--text-main);
+}
 
-            <p class="copyright">&copy; 2026 Devo Visuals. All rights reserved.</p>
-        </div>
-    </footer>
+.hero h3 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 2.2rem;
+    text-transform: uppercase;
+}
 
-    <!-- Site Scripts -->
-    <script>
-        // Mobile Navigation Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                menuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
+/* Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+}
 
-            // Close the menu whenever a nav link is tapped
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-        }
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+}
 
-        // Center the section when its link or button is clicked
-        document.querySelectorAll('a[href="#about"], a[href="#portfolio"], a[href="#contact-form"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.getElementById(link.getAttribute('href').slice(1)).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            });
-        });
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
 
-        // Glitch bars that slide as you scroll
-        const glitchBars = document.getElementById('glitch-bars');
-        if (glitchBars) {
-            const blocks = [];
-            for (let i = 0; i < 28; i++) {
-                const bar = document.createElement('span');
-                bar.style.width = (2 + Math.random() * 9) + '%';
-                bar.dataset.base = Math.random();
-                bar.dataset.speed = (Math.random() * 1.6 - 0.8).toFixed(2);
-                glitchBars.appendChild(bar);
-                blocks.push(bar);
-            }
-            const moveBars = () => {
-                const w = glitchBars.offsetWidth;
-                const y = window.scrollY;
-                blocks.forEach(bar => {
-                    const x = ((bar.dataset.base * w + y * bar.dataset.speed) % w + w) % w;
-                    bar.style.transform = 'translateX(' + x + 'px)';
-                });
-            };
-            moveBars();
-            window.addEventListener('scroll', moveBars, { passive: true });
-            window.addEventListener('resize', moveBars);
-        }
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    background: transparent;
+}
 
-        // Contact Form AJAX Submission
-        const contactForm = document.getElementById('devo-contact-form');
-        const thankYouCard = document.getElementById('thank-you-card');
-        const submitBtn = document.getElementById('submit-btn');
+.btn-secondary:hover {
+    border-color: var(--text-main);
+}
 
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                submitBtn.innerText = 'SENDING...';
+/* About Section Photo Styling */
+.about-section {
+    padding: 5rem 0;
+    background-color: var(--bg-dark);
+}
 
-                const formData = new FormData(contactForm);
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+}
 
-                try {
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData
-                    });
-                    const result = await response.json();
+.about-photo {
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    filter: grayscale(100%) contrast(125%) brightness(90%);
+    transition: var(--transition);
+}
 
-                    if (result.success) {
-                        contactForm.style.display = 'none';
-                        thankYouCard.style.display = 'block';
-                    } else {
-                        alert('Something went wrong. Please try again!');
-                        submitBtn.disabled = false;
-                        submitBtn.innerText = 'Send Message';
-                    }
-                } catch (error) {
-                    alert('Connection error. Please try again!');
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = 'Send Message';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+.about-photo:hover {
+    filter: grayscale(100%) contrast(130%) brightness(100%);
+}
+
+.about-text h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 5rem 0;
+    background-color: var(--bg-card);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 350px;
+    border: 1px solid var(--border);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: grayscale(100%);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+}
+
+.gallery-overlay h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* Contact & Footer Section */
+.site-footer {
+    padding: 5rem 0 3rem 0;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    align-items: start;
+}
+
+.contact-info-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+.contact-info-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-main);
+}
+
+.info-intro {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.info-item p, .info-item a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.info-item a:hover {
+    color: var(--text-main);
+}
+
+/* Contact Form */
+.form-container {
+    scroll-margin-top: 90px; /* keeps the fixed header from covering the form when Book Now is clicked */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-select {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 0.9rem;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-select option {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--text-main);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-hover);
+}
+
+.form-privacy-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+/* Footer Bottom Grid Layout */
+.footer-bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+}
+
+@media (min-width: 992px) {
+    .footer-bottom-grid {
+        grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+    }
+}
+
+.footer-col h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--text-main);
+}
+
+.footer-col p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Stay Connected Newsletter Column */
+.newsletter-col {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.95));
+    padding: 1.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--bg-dark);
+    background-color: var(--text-main);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.9rem;
+    text-transform: uppercase;
+}
+
+.newsletter-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.interest-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.tag-chip {
+    cursor: pointer;
+}
+
+.tag-chip input {
+    display: none;
+}
+
+.tag-chip span {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-dark);
+    color: var(--text-muted);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.tag-chip input:checked + span {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    border-color: var(--text-main);
+    font-weight: 600;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.input-with-button input {
+    flex: 1;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 0.75rem 0.9rem;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-size: 0.88rem;
+    transition: var(--transition);
+}
+
+.input-with-button input:focus {
+    outline: none;
+    border-color: var(--text-main);
+}
+
+.input-with-button .btn-sub {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.input-with-button .btn-sub:hover {
+    background-color: var(--accent-hover);
+}
+
+.privacy-consent span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* Thank You Card */
+.thank-you-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    padding: 3.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.thank-you-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--bg-dark);
+    background-color: var(--text-main);
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    margin-bottom: 1.2rem;
+}
+
+.thank-you-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.thank-you-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.copyright {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 3rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-dark);
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .nav-links.active { display: flex; }
+    .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+
+    /* On phones, show one photo instead of the 3x3 grid */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .hero-tile:nth-child(n+2) { display: none; }
+}
+
+/* ===== Scroll effect: sections slide over the pinned hero ===== */
+.hero {
+    position: sticky;
+    top: 0;
+    z-index: 0;
+}
+
+.about-section,
+.portfolio-section,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Glitch bars on the seam between the hero and About */
+.glitch-bars {
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: #000;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glitch-bars span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glitch-bars { display: none; }
+}
