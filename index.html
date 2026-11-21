@@ -302,6 +302,7 @@
                     block: 'center'
                 });
             });
+        });
 
         // Home buttons: scroll back to the very top
         document.querySelectorAll('a[href="#home"], .logo').forEach(link => {
@@ -310,7 +311,7 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
-            
+
         // Scroll effect: glitch bars slide + hero text drifts and fades
         const glitchBars = document.getElementById('glitch-bars');
         const heroContent = document.querySelector('.hero-content');
