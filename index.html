@@ -27,7 +27,7 @@
             <nav class="nav-links" id="nav-menu">
                 <a href="#home" class="nav-item">Home</a>
                 <a href="#about" class="nav-item">About</a>
-                <a href="#portfolio" class="nav-item">Portfolio</a>
+                <a href="portfolio.html" class="nav-item">Portfolio</a>
                 <a href="#contact-form" class="btn-cta nav-item">Contact Us</a>
             </nav>
         </div>
@@ -249,7 +249,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Gallery</a></li>
+                        <li><a href="portfolio.html">Gallery</a></li>
                     </ul>
                 </div>
 
@@ -296,7 +296,7 @@
         }
 
         // Center the section when its link or button is clicked
-        document.querySelectorAll('a[href="#about"], a[href="#portfolio"], a[href="#contact-form"]').forEach(link => {
+        document.querySelectorAll('a[href="#about"], a[href="#contact-form"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.getElementById(link.getAttribute('href').slice(1)).scrollIntoView({
