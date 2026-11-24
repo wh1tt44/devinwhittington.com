@@ -1,5 +1,5 @@
 /* CSS Reset & Fixes */
-- {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -135,7 +135,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 6rem 0 3rem 0;
+    padding: 5rem 0 calc(5rem + 10vh) 0; /* centers the text, nudged a little above the middle */
     background-color: var(--bg-dark);
     overflow: hidden;
 }
@@ -353,6 +353,10 @@ body {
     display: inline-block;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+}
+
+.portfolio-cta .btn-secondary {
+    border-color: var(--text-main); /* visible outline (the default was almost black) */
 }
 
 .portfolio-cta .btn-secondary:hover {
