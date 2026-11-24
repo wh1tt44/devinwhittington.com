@@ -786,3 +786,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .glitch-bars { display: none; }
 }
+
+/* ===== Mobile: keep the main heading in the middle of the screen ===== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 0;
+    }
+}
