@@ -314,6 +314,15 @@
             });
         });
 
+        // Arriving from another page (e.g. portfolio.html to index.html#about): center that section too
+        window.addEventListener('load', () => {
+            const id = window.location.hash.slice(1);
+            if (['about', 'contact-form'].includes(id)) {
+                const target = document.getElementById(id);
+                if (target) target.scrollIntoView({ block: 'center', behavior: 'instant' });
+            }
+        });
+
         // Scroll effect: glitch bars slide + hero text drifts and fades
         const glitchBars = document.getElementById('glitch-bars');
         const heroContent = document.querySelector('.hero-content');
