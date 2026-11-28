@@ -286,25 +286,28 @@
                     <h3>Get Preferred Booking & Behind-the-Lens Recaps</h3>
                     <p class="newsletter-desc">Join the VIP list for direct access to exclusive Midwest shoot dates, price drops, and creative film breakdowns.</p>
 
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the VIP list!');">
+                    <form id="newsletter-form" class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="eff25463-9958-424f-9253-eb5499c2bd37">
+                        <input type="hidden" name="subject" value="New VIP List Signup — The Insider Dispatch">
+
                         <div class="interest-tags">
                             <label class="tag-chip">
-                                <input type="checkbox" name="interest" value="weddings" checked>
+                                <input type="checkbox" name="interest" value="Weddings" checked>
                                 <span>Weddings</span>
                             </label>
                             <label class="tag-chip">
-                                <input type="checkbox" name="interest" value="commercial">
+                                <input type="checkbox" name="interest" value="Commercial">
                                 <span>Commercial</span>
                             </label>
                             <label class="tag-chip">
-                                <input type="checkbox" name="interest" value="events">
+                                <input type="checkbox" name="interest" value="Events">
                                 <span>Events</span>
                             </label>
                         </div>
 
                         <div class="input-with-button">
-                            <input type="email" placeholder="Enter your email address..." required>
-                            <button type="submit" class="btn-sub">JOIN LIST</button>
+                            <input type="email" name="email" placeholder="Enter your email address..." required>
+                            <button type="submit" id="newsletter-btn" class="btn-sub">JOIN LIST</button>
                         </div>
 
                         <label class="checkbox-label privacy-consent">
@@ -312,6 +315,8 @@
                             <span>I agree to receive occasional emails. Zero spam, ever.</span>
                         </label>
                     </form>
+
+                    <p id="newsletter-status" class="newsletter-desc" style="display: none; color: var(--text-main); margin-top: 0.75rem;"></p>
                 </div>
 
                 <div class="footer-col">
@@ -509,6 +514,50 @@
                     alert('Connection error. Please try again!');
                     submitBtn.disabled = false;
                     submitBtn.innerText = 'Send Message';
+                }
+            });
+        }
+
+        // Insider Dispatch Newsletter AJAX Submission
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterBtn = document.getElementById('newsletter-btn');
+        const newsletterStatus = document.getElementById('newsletter-status');
+
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                newsletterBtn.disabled = true;
+                newsletterBtn.innerText = 'JOINING...';
+                newsletterStatus.style.display = 'none';
+
+                const formData = new FormData(newsletterForm);
+                const selectedInterests = formData.getAll('interest').join(', ') || 'None selected';
+                formData.delete('interest');
+                formData.set('interests', selectedInterests);
+
+                try {
+                    const response = await fetch(newsletterForm.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+
+                    if (result.success) {
+                        newsletterForm.reset();
+                        newsletterBtn.innerText = 'JOINED';
+                        newsletterStatus.innerText = "You're on the VIP list! Thanks for joining.";
+                        newsletterStatus.style.display = 'block';
+                    } else {
+                        newsletterBtn.disabled = false;
+                        newsletterBtn.innerText = 'JOIN LIST';
+                        newsletterStatus.innerText = 'Something went wrong. Please try again!';
+                        newsletterStatus.style.display = 'block';
+                    }
+                } catch (error) {
+                    newsletterBtn.disabled = false;
+                    newsletterBtn.innerText = 'JOIN LIST';
+                    newsletterStatus.innerText = 'Connection error. Please try again!';
+                    newsletterStatus.style.display = 'block';
                 }
             });
         }
