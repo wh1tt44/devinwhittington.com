@@ -27,6 +27,7 @@
             <nav class="nav-links" id="nav-menu">
                 <a href="#home" class="nav-item">Home</a>
                 <a href="#about" class="nav-item">About</a>
+                <a href="#packages" class="nav-item">Packages</a>
                 <a href="portfolio" class="nav-item">Portfolio</a>
                 <a href="#contact-form" class="btn-cta nav-item">Contact Us</a>
             </nav>
@@ -35,22 +36,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- 9-photo grid background (desktop). Mobile shows a single photo. -->
-        <div class="hero-grid" aria-hidden="true">
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-        </div>
+        <!-- One photo behind the hero text -->
+        <div class="hero-bg" aria-hidden="true"></div>
 
         <div class="container hero-content">
             <span class="sub-heading">Mid-West Based | Film & Photo</span>
-            <h1>Cinematic Videos</h1>
+            <h1>Weddings, Events &amp; Businesses</h1>
             <h3>WE DO IT RAW</h3>
             <div class="hero-buttons">
                 <a href="#contact-form" class="btn btn-primary">Book Now</a>
@@ -58,9 +49,147 @@
         </div>
     </section>
 
+    <!-- Two-Path Section -->
+    <section id="services" class="path-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Are You Planning?</h2>
+                <p>Pick your path and I'll show you what fits.</p>
+            </div>
+            <div class="path-grid">
+                <article class="path-card">
+                    <span class="path-label">01</span>
+                    <h3>Weddings &amp; Events</h3>
+                    <p>Relaxed, real coverage of the moments you'll want to relive, from the first look to the last dance.</p>
+                    <ul class="path-list">
+                        <li>Wedding films &amp; photography</li>
+                        <li>Receptions, parties &amp; special events</li>
+                        <li>Zero pressure, high impact</li>
+                    </ul>
+                    <a href="#packages" class="btn btn-primary" data-group="weddings">See Wedding &amp; Event Packages</a>
+                </article>
+                <article class="path-card">
+                    <span class="path-label">02</span>
+                    <h3>For Businesses</h3>
+                    <p>Raw, honest video and photo content that shows people what your business is really about.</p>
+                    <ul class="path-list">
+                        <li>Promo &amp; brand videos</li>
+                        <li>Business highlights &amp; product content</li>
+                        <li>Social-ready edits, fast delivery</li>
+                    </ul>
+                    <a href="#packages" class="btn btn-primary" data-group="business">See Business Packages</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <!-- NOTE: prices below are starting prices. Edit the numbers in the <strong> tags to match your real rates. -->
+    <section id="packages" class="packages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Packages</h2>
+                <p>Simple starting prices. Every project is tailored, so send a message for an exact quote.</p>
+            </div>
+
+            <div class="pkg-tabs">
+                <button class="pkg-tab active" data-group="weddings">Weddings &amp; Events</button>
+                <button class="pkg-tab" data-group="business">For Businesses</button>
+            </div>
+
+            <!-- Weddings & Events -->
+            <div class="pkg-panel active" id="pkg-weddings">
+                <div class="pkg-card">
+                    <h3>Event Coverage</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$500</strong></div>
+                    <ul class="pkg-features">
+                        <li>Up to 2 hours of coverage</li>
+                        <li>1-minute recap video</li>
+                        <li>30 edited photos</li>
+                        <li>Online delivery</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-secondary" data-project="event" data-package="Event Coverage">Book Now</a>
+                </div>
+                <div class="pkg-card">
+                    <h3>Wedding Highlight</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$1,200</strong></div>
+                    <ul class="pkg-features">
+                        <li>Up to 4 hours of coverage</li>
+                        <li>3-5 minute cinematic highlight film</li>
+                        <li>Licensed music</li>
+                        <li>Online delivery</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-secondary" data-project="wedding" data-package="Wedding Highlight">Book Now</a>
+                </div>
+                <div class="pkg-card featured">
+                    <span class="pkg-badge">Most Popular</span>
+                    <h3>The Full Story</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$2,200</strong></div>
+                    <ul class="pkg-features">
+                        <li>Up to 8 hours of coverage</li>
+                        <li>Highlight film + ceremony &amp; speeches edit</li>
+                        <li>100+ edited photos</li>
+                        <li>Online delivery</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary" data-project="wedding" data-package="The Full Story">Book Now</a>
+                </div>
+                <div class="pkg-card">
+                    <h3>Photo + Film</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$3,200</strong></div>
+                    <ul class="pkg-features">
+                        <li>Full day, up to 10 hours</li>
+                        <li>Highlight film + full-length feature film</li>
+                        <li>300+ edited photos</li>
+                        <li>Priority editing</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-secondary" data-project="wedding" data-package="Photo + Film">Book Now</a>
+                </div>
+            </div>
+
+            <!-- For Businesses -->
+            <div class="pkg-panel" id="pkg-business">
+                <div class="pkg-card">
+                    <h3>Quick Promo</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$600</strong></div>
+                    <ul class="pkg-features">
+                        <li>Half-day shoot</li>
+                        <li>30-60 second promo video</li>
+                        <li>Vertical cut for social media</li>
+                        <li>20 edited photos</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-secondary" data-project="commercial" data-package="Quick Promo">Book Now</a>
+                </div>
+                <div class="pkg-card featured">
+                    <span class="pkg-badge">Most Popular</span>
+                    <h3>Brand Story</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$1,200</strong></div>
+                    <ul class="pkg-features">
+                        <li>Full-day shoot</li>
+                        <li>1-2 minute brand video</li>
+                        <li>3 short social cuts</li>
+                        <li>50 edited photos</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary" data-project="commercial" data-package="Brand Story">Book Now</a>
+                </div>
+                <div class="pkg-card">
+                    <h3>Monthly Content</h3>
+                    <div class="pkg-price"><small>Starting at</small><strong>$1,800<span style="font-size: 0.9rem; font-weight: 600;"> / mo</span></strong></div>
+                    <ul class="pkg-features">
+                        <li>2 shoot days each month</li>
+                        <li>8 short-form videos</li>
+                        <li>40 edited photos</li>
+                        <li>Ongoing, priority scheduling</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-secondary" data-project="commercial" data-package="Monthly Content">Book Now</a>
+                </div>
+            </div>
+
+            <p class="pkg-note">Need something different? Weddings, parties, businesses, or a mix. Send a message and we'll build it around you.</p>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about-section">
-        <div class="glitch-bars" id="glitch-bars" aria-hidden="true"></div>
         <div class="container about-grid">
             <div class="about-img-wrapper">
                 <img src="pic" alt="Devin Whittington" class="about-photo">
@@ -295,13 +424,40 @@
             });
         }
 
+        // Packages: switch between Weddings & Events and Businesses
+        const pkgTabs = document.querySelectorAll('.pkg-tab');
+        const pkgPanels = document.querySelectorAll('.pkg-panel');
+
+        function showPackageGroup(group) {
+            pkgTabs.forEach(t => t.classList.toggle('active', t.dataset.group === group));
+            pkgPanels.forEach(p => p.classList.toggle('active', p.id === 'pkg-' + group));
+        }
+
+        pkgTabs.forEach(tab => {
+            tab.addEventListener('click', () => showPackageGroup(tab.dataset.group));
+        });
+
+        // Book Now buttons: pre-select the project type in the booking form
+        document.querySelectorAll('[data-project]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const select = document.getElementById('project-type');
+                const message = document.getElementById('message');
+                if (select) select.value = btn.dataset.project;
+                if (message && !message.value.trim() && btn.dataset.package) {
+                    message.value = "Package I'm interested in: " + btn.dataset.package + ". ";
+                }
+            });
+        });
+
         // Center the section when its link or button is clicked
-        document.querySelectorAll('a[href="#about"], a[href="#contact-form"]').forEach(link => {
+        document.querySelectorAll('a[href="#about"], a[href="#packages"], a[href="#portfolio"], a[href="#contact-form"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.getElementById(link.getAttribute('href').slice(1)).scrollIntoView({
+                const id = link.getAttribute('href').slice(1);
+                if (link.dataset.group) showPackageGroup(link.dataset.group);
+                document.getElementById(id).scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center'
+                    block: id === 'packages' ? 'start' : 'center'
                 });
             });
         });
@@ -323,38 +479,17 @@
             }
         });
 
-        // Scroll effect: glitch bars slide + hero text drifts and fades
-        const glitchBars = document.getElementById('glitch-bars');
+        // Scroll effect: hero text drifts and fades as the next section slides over it
         const heroContent = document.querySelector('.hero-content');
-        if (glitchBars) {
-            const bars = [];
-            for (let row = 0; row < 1; row++) {
-                for (let i = 0; i < 14; i++) {
-                    const bar = document.createElement('span');
-                    bar.style.top = (row * 16 + 3) + 'px';
-                    bar.style.width = (3 + Math.random() * 12) + '%';
-                    bar.dataset.base = Math.random();
-                    bar.dataset.speed = ((Math.random() * 1.2 + 0.3) * (row % 2 ? -1 : 1)).toFixed(2);
-                    glitchBars.appendChild(bar);
-                    bars.push(bar);
-                }
-            }
-            const updateScrollEffect = () => {
-                const w = glitchBars.offsetWidth;
+        if (heroContent) {
+            const driftHero = () => {
                 const y = window.scrollY;
-                bars.forEach(bar => {
-                    const x = ((bar.dataset.base * w + y * bar.dataset.speed) % w + w) % w;
-                    bar.style.transform = 'translateX(' + x + 'px)';
-                });
-                if (heroContent) {
-                    const p = Math.min(y / window.innerHeight, 1);
-                    heroContent.style.transform = 'translateY(' + (y * 0.3) + 'px)';
-                    heroContent.style.opacity = 1 - p * 0.9;
-                }
+                const p = Math.min(y / window.innerHeight, 1);
+                heroContent.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+                heroContent.style.opacity = 1 - p * 0.9;
             };
-            updateScrollEffect();
-            window.addEventListener('scroll', updateScrollEffect, { passive: true });
-            window.addEventListener('resize', updateScrollEffect);
+            driftHero();
+            window.addEventListener('scroll', driftHero, { passive: true });
         }
 
         // Contact Form AJAX Submission
