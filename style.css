@@ -4,65 +4,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-:root {
-    --bg-dark: #000000;
-    --bg-card: #0a0a0a;
-    --text-main: #ffffff;
-    --text-muted: #888888;
-    --accent: #ffffff;
-    --accent-hover: #cccccc;
-    --border: #222222;
-    --transition: all 0.3s ease;
-}
-
-html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* Header & Mobile Nav */
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
     backdrop-filter: none;
     border-bottom: none;
-    z-index: 1000;
-    padding: 1.2rem 0;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-main);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    z-index: 1001;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
