@@ -37,19 +37,19 @@
     <section id="home" class="hero">
         <!-- 9-photo grid background (desktop). Mobile shows a single photo. -->
         <div class="hero-grid" aria-hidden="true">
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
-            <div class="hero-tile"></div>
+            <div class="hero-tile" style="background-image: url('4.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('2.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('3.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('5.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('6.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('7.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('8.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('9.jpg');"></div>
+            <div class="hero-tile" style="background-image: url('10.jpg');"></div>
         </div>
 
         <div class="container hero-content">
-            <span class="sub-heading">Mid-West Based | Film & Photo</span>
+            <span class="sub-heading">Weddings | Events | Businesses</span>
             <h1>Cinematic Videos</h1>
             <h3>WE DO IT RAW</h3>
             <div class="hero-buttons">
@@ -58,6 +58,46 @@
         </div>
     </section>
 
+    <!-- Two-Path Section -->
+    <section id="services" class="path-section">
+        <div class="glitch-bars" id="glitch-bars" aria-hidden="true"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>What Are You Planning?</h2>
+                <p>Pick your path and I'll show you what fits.</p>
+            </div>
+            <div class="path-grid">
+                <article class="path-card">
+                    <span class="path-label">01</span>
+                    <h3>Weddings &amp; Events</h3>
+                    <p>Relaxed, real coverage of the moments you'll want to relive, from the first look to the last dance.</p>
+                    <ul class="path-list">
+                        <li>Wedding films &amp; photography</li>
+                        <li>Receptions, parties &amp; special events</li>
+                        <li>Zero pressure, high impact</li>
+                    </ul>
+                    <div class="path-actions">
+                        <a href="#contact-form" class="btn btn-primary" data-project="wedding">Book Now</a>
+                        <a href="portfolio#weddings" class="btn btn-secondary">See the Work</a>
+                    </div>
+                </article>
+                <article class="path-card">
+                    <span class="path-label">02</span>
+                    <h3>For Businesses</h3>
+                    <p>Raw, honest video and photo content that shows people what your business is really about.</p>
+                    <ul class="path-list">
+                        <li>Promo &amp; brand videos</li>
+                        <li>Business highlights &amp; product content</li>
+                        <li>Social-ready edits, fast delivery</li>
+                    </ul>
+                    <div class="path-actions">
+                        <a href="#contact-form" class="btn btn-primary" data-project="commercial">Book Now</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="glitch-bars" id="glitch-bars" aria-hidden="true"></div>
@@ -78,8 +118,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>The Best Moments, Captured</h2>
-                <p>A look into recent wedding coverages and cinematic event productions.</p>
-            </div>
+                <p>A look into recent weddings, events, and cinematic productions.</p>            </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="2.jpg" alt="Wedding couple portrait">
@@ -312,8 +351,14 @@
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        });
 
+        // Book Now buttons on the two path cards: pre-select the project type in the form
+        document.querySelectorAll('[data-project]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const select = document.getElementById('project-type');
+                if (select) select.value = btn.dataset.project;
+            });
+        });
         // Arriving from another page (e.g. portfolio.html to index.html#about): center that section too
         window.addEventListener('load', () => {
             const id = window.location.hash.slice(1);
