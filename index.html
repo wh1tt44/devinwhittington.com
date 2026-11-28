@@ -27,7 +27,7 @@
             <nav class="nav-links" id="nav-menu">
                 <a href="#home" class="nav-item">Home</a>
                 <a href="#about" class="nav-item">About</a>
-                <a href="portfolio" class="nav-item">Portfolio</a>
+                <a href="portfolio.html" class="nav-item">Portfolio</a>
                 <a href="#contact-form" class="btn-cta nav-item">Contact Us</a>
             </nav>
         </div>
@@ -170,7 +170,7 @@
                 </div>
             </div>
             <div class="portfolio-cta">
-                <a href="portfolio" class="btn btn-secondary">View Full Portfolio</a>
+                <a href="portfolio.html" class="btn btn-secondary">View Full Portfolio</a>
             </div>
         </div>
     </section>
@@ -245,7 +245,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                                <input type="tel" id="phone" name="phone" placeholder="555-000-0000" maxlength="12" inputmode="numeric">
                             </div>
                         </div>
 
@@ -320,7 +320,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#planning">Planning</a></li>
-                        <li><a href="portfolio">Gallery</a></li>
+                        <li><a href="portfolio.html">Gallery</a></li>
                     </ul>
                 </div>
 
@@ -460,6 +460,21 @@
             updateScrollEffect();
             window.addEventListener('scroll', updateScrollEffect, { passive: true });
             window.addEventListener('resize', updateScrollEffect);
+        }
+
+        // Auto-format phone number with dashes (555-000-0000)
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', (e) => {
+                const digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+                if (digits.length > 6) {
+                    e.target.value = `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+                } else if (digits.length > 3) {
+                    e.target.value = `${digits.slice(0, 3)}-${digits.slice(3)}`;
+                } else {
+                    e.target.value = digits;
+                }
+            });
         }
 
         // Contact Form AJAX Submission
