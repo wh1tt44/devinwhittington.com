@@ -135,12 +135,12 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 5rem 0 calc(5rem + 10vh) 0; /* centers the text, nudged a little above the middle */
+    padding: 6rem 0 3rem 0;
     background-color: var(--bg-dark);
     overflow: hidden;
 }
 
-/* 3x3 grid of photos behind the hero text */
+/* 3x3 grid of 9 different photos behind the hero text */
 .hero-grid {
     position: absolute;
     inset: 0;
@@ -151,9 +151,21 @@ body {
 }
 
 .hero-tile {
-    background: url('4.jpg') no-repeat center center / cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     filter: grayscale(100%);
 }
+
+.hero-tile:nth-child(1) { background-image: url('4.jpg'); }
+.hero-tile:nth-child(2) { background-image: url('2.jpg'); }
+.hero-tile:nth-child(3) { background-image: url('3.jpg'); }
+.hero-tile:nth-child(4) { background-image: url('5.jpg'); }
+.hero-tile:nth-child(5) { background-image: url('6.jpg'); }
+.hero-tile:nth-child(6) { background-image: url('7.jpg'); }
+.hero-tile:nth-child(7) { background-image: url('8.jpg'); }
+.hero-tile:nth-child(8) { background-image: url('9.jpg'); }
+.hero-tile:nth-child(9) { background-image: url('10.jpg'); }
 
 /* Dark overlay so the text stays readable */
 .hero::after {
@@ -209,6 +221,7 @@ body {
 
 /* Buttons */
 .btn {
+    display: inline-block;
     padding: 0.8rem 2rem;
     border-radius: 4px;
     font-weight: 600;
@@ -279,10 +292,68 @@ body {
     font-size: 0.95rem;
 }
 
+/* What Are You Planning Section */
+.planning-section {
+    padding: 5rem 0;
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border);
+}
+
+.planning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.planning-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: var(--transition);
+}
+
+.planning-card:hover {
+    border-color: var(--text-main);
+    transform: translateY(-4px);
+}
+
+.planning-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+}
+
+.planning-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.planning-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.8rem;
+    flex: 1;
+}
+
+.planning-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.88rem;
+}
+
 /* Portfolio Section */
 .portfolio-section {
     padding: 5rem 0;
     background-color: var(--bg-card);
+    border-top: 1px solid var(--border);
 }
 
 .section-header {
@@ -347,22 +418,6 @@ body {
 .portfolio-cta {
     text-align: center;
     margin-top: 2.5rem;
-}
-
-.portfolio-cta .btn {
-    display: inline-block;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-.portfolio-cta .btn-secondary {
-    border-color: var(--text-main); /* visible outline (the default was almost black) */
-}
-
-.portfolio-cta .btn-secondary:hover {
-    transform: translateY(-2px);
-    background-color: var(--text-main);
-    color: var(--bg-dark);
 }
 
 /* Contact & Footer Section */
@@ -757,6 +812,7 @@ body {
 }
 
 .about-section,
+.planning-section,
 .portfolio-section,
 .site-footer {
     position: relative;
@@ -785,107 +841,4 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     .glitch-bars { display: none; }
-}
-
-/* ===== Mobile: keep the main heading in the middle of the screen ===== */
-@media (max-width: 768px) {
-    .hero {
-        min-height: 100vh;
-        min-height: 100svh;
-        padding: 0;
-    }
-}
-
-/* ===== Two-path section ===== */
-.path-section {
-    position: relative;
-    z-index: 1;
-    padding: 5rem 0;
-    background-color: var(--bg-dark);
-}
-
-.path-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-.path-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: var(--transition);
-}
-
-.path-card:hover {
-    border-color: var(--text-main);
-    transform: translateY(-4px);
-}
-
-.path-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    font-weight: 700;
-}
-
-.path-card h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.path-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.path-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 0.8rem;
-}
-
-.path-list li {
-    position: relative;
-    padding-left: 1.2rem;
-    font-size: 0.9rem;
-}
-
-.path-list li::before {
-    content: "\2014";
-    position: absolute;
-    left: 0;
-    color: var(--text-muted);
-}
-
-.path-actions {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    margin-top: auto;
-}
-
-.path-actions .btn {
-    display: inline-block;
-}
-
-.path-actions .btn-secondary {
-    border-color: var(--text-main);
-}
-
-.path-actions .btn-secondary:hover {
-    background-color: var(--text-main);
-    color: var(--bg-dark);
-}
-
-@media (max-width: 768px) {
-    .path-grid { grid-template-columns: 1fr; }
-    .path-card { padding: 2rem 1.5rem; }
 }
