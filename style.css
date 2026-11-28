@@ -473,7 +473,7 @@ body {
     grid-template-columns: 1fr 1.3fr;
     gap: 3rem;
     margin-bottom: 5rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .contact-info-card {
@@ -533,6 +533,8 @@ body {
 /* Contact Form */
 .form-container {
     scroll-margin-top: 90px; /* keeps the fixed header from covering the form when Book Now is clicked */
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-form {
@@ -767,6 +769,10 @@ body {
 
 /* Thank You Card */
 .thank-you-card {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bg-dark);
     border: 1px solid var(--border);
     padding: 3.5rem 2rem;
