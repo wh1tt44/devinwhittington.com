@@ -273,8 +273,8 @@
                     <!-- Custom Thank You Card (Initially Hidden) -->
                     <div id="thank-you-card" class="thank-you-card" style="display: none;">
                         <div class="thank-you-badge">RECEIVED</div>
-                        <h3>Message Sent Directly to Devin!</h3>
-                        <p>Appreciate you reaching out. I take my work seriously—I'll review your details and get back to you within 24 hours.</p>
+                        <h3>Thank You!</h3>
+                        <p>Thanks for reaching out—our team will review your details and be in touch within 24 hours.</p>
                     </div>
                 </div>
             </div>
@@ -316,7 +316,7 @@
                         </label>
                     </form>
 
-<div id="newsletter-thank-you" class="thank-you-card" style="display: none; background-color: #161616; border-color: #2c2c2c; padding: 1.15rem 1rem;">
+                    <div id="newsletter-thank-you" class="thank-you-card" style="display: none; background-color: #161616; border-color: #2c2c2c; padding: 1.15rem 1rem;">
                         <div class="thank-you-badge" style="margin-bottom: 0.55rem;">ON THE LIST</div>
                         <h3 style="font-size: 1.1rem; margin-bottom: 0.35rem;">You're on the VIP List!</h3>
                         <p style="font-size: 0.82rem; line-height: 1.45;">Thanks for joining. You'll be first in line for Midwest shoot dates, price drops, and behind-the-lens breakdowns.</p>
@@ -508,7 +508,7 @@
 
                     if (result.success) {
                         contactForm.style.display = 'none';
-                        thankYouCard.style.display = 'block';
+                        thankYouCard.style.display = 'flex';
                     } else {
                         alert('Something went wrong. Please try again!');
                         submitBtn.disabled = false;
