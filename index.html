@@ -311,12 +311,16 @@
                         </div>
 
                         <label class="checkbox-label privacy-consent">
-<input type="checkbox">
+                            <input type="checkbox">
                             <span>I agree to receive occasional emails. Zero spam, ever.</span>
                         </label>
                     </form>
 
-                    <p id="newsletter-status" class="newsletter-desc" style="display: none; color: var(--text-main); margin-top: 0.75rem;"></p>
+                    <div id="newsletter-thank-you" class="thank-you-card" style="display: none; padding: 2rem 1.5rem;">
+                        <div class="thank-you-badge">ON THE LIST</div>
+                        <h3>You're on the VIP List!</h3>
+                        <p>Thanks for joining. You'll be first in line for Midwest shoot dates, price drops, and behind-the-lens breakdowns.</p>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -521,14 +525,13 @@
         // Insider Dispatch Newsletter AJAX Submission
         const newsletterForm = document.getElementById('newsletter-form');
         const newsletterBtn = document.getElementById('newsletter-btn');
-        const newsletterStatus = document.getElementById('newsletter-status');
+        const newsletterThankYou = document.getElementById('newsletter-thank-you');
 
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 newsletterBtn.disabled = true;
                 newsletterBtn.innerText = 'JOINING...';
-                newsletterStatus.style.display = 'none';
 
                 const formData = new FormData(newsletterForm);
                 const selectedInterests = formData.getAll('interest').join(', ') || 'None selected';
@@ -543,21 +546,17 @@
                     const result = await response.json();
 
                     if (result.success) {
-                        newsletterForm.reset();
-                        newsletterBtn.innerText = 'JOINED';
-                        newsletterStatus.innerText = "You're on the VIP list! Thanks for joining.";
-                        newsletterStatus.style.display = 'block';
+                        newsletterForm.style.display = 'none';
+                        newsletterThankYou.style.display = 'block';
                     } else {
+                        alert('Something went wrong. Please try again!');
                         newsletterBtn.disabled = false;
                         newsletterBtn.innerText = 'JOIN LIST';
-                        newsletterStatus.innerText = 'Something went wrong. Please try again!';
-                        newsletterStatus.style.display = 'block';
                     }
                 } catch (error) {
+                    alert('Connection error. Please try again!');
                     newsletterBtn.disabled = false;
                     newsletterBtn.innerText = 'JOIN LIST';
-                    newsletterStatus.innerText = 'Connection error. Please try again!';
-                    newsletterStatus.style.display = 'block';
                 }
             });
         }
