@@ -79,29 +79,64 @@
             <div class="section-header">
                 <span class="sub-heading">Tailored Coverage</span>
                 <h2>What Are You Planning?</h2>
-                <p>Choose your project type below to jump straight to booking with your details pre-selected.</p>
+                <p>Pick your project below to jump straight to booking with it selected.</p>
             </div>
 
             <div class="planning-grid">
                 <div class="planning-card">
-                    <span class="planning-tag">01 / WEDDINGS</span>
-                    <h3>Weddings &amp; Elopements</h3>
-                    <p>Full-day cinematic wedding films and timeless photo coverage—capturing the real emotion without stiff posing.</p>
-                    <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="wedding">Plan Your Wedding</a>
+                    <button type="button" class="planning-toggle" aria-expanded="false">
+                        <span class="planning-header-text">
+                            <span class="planning-tag">01 / WEDDINGS</span>
+                            <span class="planning-title">Weddings</span>
+                        </span>
+                        <span class="planning-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="planning-body">
+                        <p>Full-day cinematic wedding films and timeless photo coverage—real emotion without stiff posing.</p>
+                        <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="wedding">Plan Wedding</a>
+                    </div>
                 </div>
 
                 <div class="planning-card">
-                    <span class="planning-tag">02 / COMMERCIAL</span>
-                    <h3>Commercial &amp; Brand</h3>
-                    <p>Business highlights, promo films, and sharp visual storytelling built to make your brand stand out.</p>
-                    <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="commercial">Book Commercial</a>
+                    <button type="button" class="planning-toggle" aria-expanded="false">
+                        <span class="planning-header-text">
+                            <span class="planning-tag">02 / ENGAGEMENTS</span>
+                            <span class="planning-title">Engagements</span>
+                        </span>
+                        <span class="planning-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="planning-body">
+                        <p>Relaxed couples sessions, surprise proposals, and save-the-date films tailored to your vibe.</p>
+                        <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="engagement">Plan Engagement</a>
+                    </div>
                 </div>
 
                 <div class="planning-card">
-                    <span class="planning-tag">03 / EVENTS</span>
-                    <h3>Special Events</h3>
-                    <p>Live events, celebrations, and milestone recaps shot raw and edited with high-impact pacing.</p>
-                    <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="event">Cover Your Event</a>
+                    <button type="button" class="planning-toggle" aria-expanded="false">
+                        <span class="planning-header-text">
+                            <span class="planning-tag">03 / EVENTS</span>
+                            <span class="planning-title">Special Events</span>
+                        </span>
+                        <span class="planning-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="planning-body">
+                        <p>Live events, celebrations, and milestone recaps shot raw and edited with high-impact pacing.</p>
+                        <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="event">Book Event</a>
+                    </div>
+                </div>
+
+                <div class="planning-card">
+                    <button type="button" class="planning-toggle" aria-expanded="false">
+                        <span class="planning-header-text">
+                            <span class="planning-tag">04 / COMMERCIAL &amp; MORE</span>
+                            <span class="planning-title">Commercial &amp; Etc.</span>
+                        </span>
+                        <span class="planning-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="planning-body">
+                        <p>Business highlights, brand promos, portraits, and custom shoots built to stand out.</p>
+                        <a href="#contact-form" class="btn btn-secondary planning-btn" data-project="commercial">Start Project</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -219,8 +254,9 @@
                             <select id="project-type" name="project_type" class="form-select">
                                 <option value="" disabled selected>Select service focus...</option>
                                 <option value="wedding">Wedding Videography / Photography</option>
-                                <option value="commercial">Commercial / Business Highlight</option>
+                                <option value="engagement">Engagement / Proposal Session</option>
                                 <option value="event">Special Event Coverage</option>
+                                <option value="commercial">Commercial / Business Highlight</option>
                                 <option value="other">Other Inquiry</option>
                             </select>
                         </div>
@@ -330,6 +366,27 @@
             });
         }
 
+        // Mobile Dropdown Toggle for "What Are You Planning?"
+        const planningCards = document.querySelectorAll('.planning-card');
+        planningCards.forEach(card => {
+            const toggleBtn = card.querySelector('.planning-toggle');
+            if (!toggleBtn) return;
+
+            toggleBtn.addEventListener('click', () => {
+                if (window.innerWidth > 768) return;
+                const isOpen = card.classList.contains('open');
+                planningCards.forEach(c => {
+                    c.classList.remove('open');
+                    const btn = c.querySelector('.planning-toggle');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    card.classList.add('open');
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
         // Center the section when any in-page anchor button/link (except #home) is clicked
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             const href = link.getAttribute('href');
@@ -344,7 +401,6 @@
                     if (!target) return;
                     e.preventDefault();
 
-                    // Pre-select project type if clicked from a "What Are You Planning?" button
                     const projectType = link.dataset.project;
                     const projectSelect = document.getElementById('project-type');
                     if (projectType && projectSelect) {
