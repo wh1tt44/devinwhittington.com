@@ -159,7 +159,7 @@
         <div class="container">
             <span class="sub-heading">Mid-West Based | Film &amp; Photo</span>
             <h1>Portfolio</h1>
-            <p>A look at recent weddings and events. Tap any photo to see it bigger.</p>
+            <p>Browse by category. Tap any photo to see it bigger.</p>
         </div>
     </section>
 
@@ -193,8 +193,15 @@
                 </div>
                 <div class="gallery-item" data-category="weddings">
                     <img src="10.jpg" alt="Wedding photo 9" loading="lazy">
+                                <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="weddings">Weddings</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="businesses">Businesses</button>
+            </div>
                 </div>
             </div>
+            <p class="empty-note" id="empty-note">Nothing here yet. New work is coming soon.</p>
         </div>
     </section>
 
@@ -270,6 +277,33 @@
 
         const items = document.querySelectorAll('#gallery .gallery-item');
 
+        // Category filter (also opens a category from a link, e.g. portfolio#weddings)
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const emptyNote = document.getElementById('empty-note');
+
+        function showCategory(filter) {
+            let visible = 0;
+            filterButtons.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+            items.forEach(item => {
+                const show = filter === 'all' || item.dataset.category === filter;
+                item.classList.toggle('hidden', !show);
+                if (show) visible++;
+            });
+            emptyNote.classList.toggle('show', visible === 0);
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => showCategory(btn.dataset.filter));
+        });
+
+        function openCategoryFromLink() {
+            const category = window.location.hash.slice(1);
+            if (['weddings', 'events', 'businesses'].includes(category)) showCategory(category);
+        }
+
+        openCategoryFromLink();
+        window.addEventListener('hashchange', openCategoryFromLink);
+        
         // Photo viewer
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = lightbox.querySelector('img');
